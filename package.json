@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/huyhoangk5/ChefBot.git",
+  "homepage": "https://huyhoangk5.github.io/ChefBot",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
