@@ -8,6 +8,7 @@ import RecipeDetailModal from './components/Common/RecipeDetailModal';
 import CreateRecipeModal from './components/UGC/CreateRecipeModal';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { AnimatePresence, motion } from 'framer-motion';
+import logoChefbot from '/images/logo_chefbot.png?url';
 
 function App() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
@@ -256,7 +257,7 @@ function App() {
       <header className="bg-white sticky top-0 z-[100] shadow-sm px-4 sm:px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
           <div className="flex items-center gap-2 shrink-0">
-            <img src="/images/logo_chefbot.png" alt="Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl" />
+            <img src={logoChefbot} alt="Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl" />
             <h1 className="text-xl sm:text-2xl font-black text-gray-800 hidden md:block uppercase tracking-tighter">Chef<span className="text-orange-500">bot</span></h1>
           </div>
 

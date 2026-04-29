@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: '/ChefBot/',  // <-- QUAN TRỌNG: thay ChefBot bằng tên repo của bạn
+  base: '/ChefBot/',
   plugins: [
     react(),
     VitePWA({
