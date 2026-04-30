@@ -1,864 +1,168 @@
 {
   "categories": [
-    "Thịt & Cá",
-    "Rau củ & Trái cây",
-    "Trứng & Sữa",
-    "Gia vị & Đồ khô",
+    "Thịt",
+    "Cá",
+    "Rau củ",
+    "Trái cây",
+    "Trứng",
+    "Sữa",
+    "Gia vị",
+    "Đồ khô",
     "Đồ uống"
   ],
   "ingredients": [
-    { "id": "i1", "name": "Thịt bò", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=200" },
-    { "id": "i2", "name": "Thịt gà", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=200" },
-    { "id": "i3", "name": "Thịt lợn", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=200" },
-    { "id": "i4", "name": "Cá hồi", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200" },
-    { "id": "i5", "name": "Tôm tươi", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=200" },
-    { "id": "i6", "name": "Mực", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=200" },
-    { "id": "i7", "name": "Sườn non", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=200" },
-    { "id": "i8", "name": "Xúc xích", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1541048612927-b2fac4715cde?w=200" },
-    { "id": "i9", "name": "Cánh gà", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=200" },
-    { "id": "i10", "name": "Bò viên", "category": "Thịt & Cá", "image": "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?w=200" },
-    { "id": "i11", "name": "Cà chua", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200" },
-    { "id": "i12", "name": "Khoai tây", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200" },
-    { "id": "i13", "name": "Cà rốt", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=200" },
-    { "id": "i14", "name": "Súp lơ", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=200" },
-    { "id": "i15", "name": "Hành tây", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1508747703725-71977713d540?w=200" },
-    { "id": "i16", "name": "Dưa leo", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1449333214881-06b91b44c218?w=200" },
-    { "id": "i17", "name": "Xà lách", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1556801712-76c826667031?w=200" },
-    { "id": "i18", "name": "Ớt chuông", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1563513331620-ca78fe90d2c2?w=200" },
-    { "id": "i19", "name": "Nấm rơm", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=200" },
-    { "id": "i20", "name": "Giá đỗ", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=200" },
-    { "id": "i21", "name": "Rau muống", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=200" },
-    { "id": "i22", "name": "Bắp ngô", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=200" },
-    { "id": "i23", "name": "Kim chi", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?w=200" },
-    { "id": "i24", "name": "Chanh", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1590502593747-42a996133562?w=200" },
-    { "id": "i25", "name": "Táo", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=200" },
-    { "id": "i26", "name": "Trứng gà", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200" },
-    { "id": "i27", "name": "Sữa tươi", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1563636619-e910f01ff184?w=200" },
-    { "id": "i28", "name": "Phô mai", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1485962391905-dc37bc33e59b?w=200" },
-    { "id": "i29", "name": "Bơ", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=200" },
-    { "id": "i30", "name": "Sữa đặc", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1563636619-e910f01ff184?w=200" },
-    { "id": "i31", "name": "Sữa chua", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200" },
-    { "id": "i32", "name": "Kem tươi", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=200" },
-    { "id": "i33", "name": "Trứng vịt", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200" },
-    { "id": "i34", "name": "Đậu phụ", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200" },
-    { "id": "i35", "name": "Cốt dừa", "category": "Trứng & Sữa", "image": "https://images.unsplash.com/photo-1541658016709-82535e94bc71?w=200" },
-    { "id": "i36", "name": "Gạo", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200" },
-    { "id": "i37", "name": "Mì tôm", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200" },
-    { "id": "i38", "name": "Bánh mì", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200" },
-    { "id": "i39", "name": "Pasta/Mì Ý", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200" },
-    { "id": "i40", "name": "Bột mì", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200" },
-    { "id": "i41", "name": "Tỏi", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200" },
-    { "id": "i42", "name": "Hành lá", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=200" },
-    { "id": "i43", "name": "Ớt tươi", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1528137850645-f37b678917c0?w=200" },
-    { "id": "i44", "name": "Đậu đen", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1551462147-37885abb3e4a?w=200" },
-    { "id": "i45", "name": "Mật ong", "category": "Gia vị & Đồ khô", "image": "https://images.unsplash.com/photo-1584473457406-62372dec8d33?w=200" },
+    { "id": "i1", "name": "Thịt bò", "category": "Thịt", "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=200" },
+    { "id": "i2", "name": "Thịt gà", "category": "Thịt", "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=200" },
+    { "id": "i3", "name": "Thịt lợn", "category": "Thịt", "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=200" },
+    { "id": "i4", "name": "Cá hồi", "category": "Cá", "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200" },
+    { "id": "i5", "name": "Tôm tươi", "category": "Cá", "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=200" },
+    { "id": "i6", "name": "Mực", "category": "Cá", "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=200" },
+    { "id": "i7", "name": "Sườn non", "category": "Thịt", "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=200" },
+    { "id": "i8", "name": "Xúc xích", "category": "Thịt", "image": "https://images.unsplash.com/photo-1541048612927-b2fac4715cde?w=200" },
+    { "id": "i9", "name": "Cánh gà", "category": "Thịt", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=200" },
+    { "id": "i10", "name": "Bò viên", "category": "Thịt", "image": "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?w=200" },
+    { "id": "i11", "name": "Cà chua", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1546470427-1c6e9a9c8e5c?w=200" },
+    { "id": "i12", "name": "Khoai tây", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200" },
+    { "id": "i13", "name": "Cà rốt", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=200" },
+    { "id": "i14", "name": "Súp lơ", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=200" },
+    { "id": "i15", "name": "Hành tây", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1508747703725-71977713d540?w=200" },
+    { "id": "i16", "name": "Dưa leo", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1449333214881-06b91b44c218?w=200" },
+    { "id": "i17", "name": "Xà lách", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1556801712-76c826667031?w=200" },
+    { "id": "i18", "name": "Ớt chuông", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1563513331620-ca78fe90d2c2?w=200" },
+    { "id": "i19", "name": "Nấm rơm", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=200" },
+    { "id": "i20", "name": "Giá đỗ", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=200" },
+    { "id": "i21", "name": "Rau muống", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1601493242940-6f96f7ddb50c?w=200" },
+    { "id": "i22", "name": "Bắp ngô", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=200" },
+    { "id": "i23", "name": "Kim chi", "category": "Rau củ", "image": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?w=200" },
+    { "id": "i24", "name": "Chanh", "category": "Trái cây", "image": "https://images.unsplash.com/photo-1590502593747-42a996133562?w=200" },
+    { "id": "i25", "name": "Táo", "category": "Trái cây", "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=200" },
+    { "id": "i26", "name": "Trứng gà", "category": "Trứng", "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200" },
+    { "id": "i27", "name": "Sữa tươi", "category": "Sữa", "image": "https://images.unsplash.com/photo-1563636619-e910f01ff184?w=200" },
+    { "id": "i28", "name": "Phô mai", "category": "Sữa", "image": "https://images.unsplash.com/photo-1485962391905-dc37bc33e59b?w=200" },
+    { "id": "i29", "name": "Bơ", "category": "Sữa", "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=200" },
+    { "id": "i30", "name": "Sữa đặc", "category": "Sữa", "image": "https://images.unsplash.com/photo-1563636619-e910f01ff184?w=200" },
+    { "id": "i31", "name": "Sữa chua", "category": "Sữa", "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200" },
+    { "id": "i32", "name": "Kem tươi", "category": "Sữa", "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=200" },
+    { "id": "i33", "name": "Trứng vịt", "category": "Trứng", "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200" },
+    { "id": "i34", "name": "Đậu phụ", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200" },
+    { "id": "i35", "name": "Cốt dừa", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1541658016709-82535e94bc71?w=200" },
+    { "id": "i36", "name": "Gạo", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200" },
+    { "id": "i37", "name": "Mì tôm", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200" },
+    { "id": "i38", "name": "Bánh mì", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200" },
+    { "id": "i39", "name": "Pasta/Mì Ý", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200" },
+    { "id": "i40", "name": "Bột mì", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=200" },
+    { "id": "i41", "name": "Tỏi", "category": "Gia vị", "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=200" },
+    { "id": "i42", "name": "Hành lá", "category": "Gia vị", "image": "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=200" },
+    { "id": "i43", "name": "Ớt tươi", "category": "Gia vị", "image": "https://images.unsplash.com/photo-1528137850645-f37b678917c0?w=200" },
+    { "id": "i44", "name": "Đậu đen", "category": "Đồ khô", "image": "https://images.unsplash.com/photo-1551462147-37885abb3e4a?w=200" },
+    { "id": "i45", "name": "Mật ong", "category": "Gia vị", "image": "https://images.unsplash.com/photo-1584473457406-62372dec8d33?w=200" },
     { "id": "i46", "name": "Cà phê", "category": "Đồ uống", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200" },
     { "id": "i47", "name": "Trà túi lọc", "category": "Đồ uống", "image": "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=200" },
     { "id": "i48", "name": "Nước cam", "category": "Đồ uống", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=200" },
-    { "id": "i49", "name": "Chuối", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=200" },
-    { "id": "i50", "name": "Xoài", "category": "Rau củ & Trái cây", "image": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=200" }
+    { "id": "i49", "name": "Chuối", "category": "Trái cây", "image": "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=200" },
+    { "id": "i50", "name": "Xoài", "category": "Trái cây", "image": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=200" }
   ],
   "recipes": [
-    {
-      "id": "r1",
-      "name": "Bò sốt vang",
-      "required_ingredients": ["i1", "i12", "i13", "i41"],
-      "instructions": "Ninh thịt bò với khoai tây, cà rốt và tỏi cho đến khi mềm nhừ.",
-      "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r2",
-      "name": "Cá hồi áp chảo",
-      "required_ingredients": ["i4", "i29", "i41", "i24"],
-      "instructions": "Cá hồi ướp muối tiêu, áp chảo với bơ và tỏi, vắt thêm chanh.",
-      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r3",
-      "name": "Trứng chiên hành lá",
-      "required_ingredients": ["i26", "i42"],
-      "instructions": "Đánh tan trứng với hành lá rồi chiên vàng trên chảo.",
-      "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r4",
-      "name": "Mì Ý sốt cà chua",
-      "required_ingredients": ["i39", "i11", "i1", "i41"],
-      "instructions": "Luộc mì, làm sốt cà chua với thịt bò băm và tỏi.",
-      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r5",
-      "name": "Canh chua cá hồi",
-      "required_ingredients": ["i4", "i11", "i24", "i43"],
-      "instructions": "Nấu cá hồi với cà chua, chanh và ớt tạo vị chua cay.",
-      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r6",
-      "name": "Bánh mì kẹp xúc xích",
-      "required_ingredients": ["i38", "i8", "i11", "i16"],
-      "instructions": "Nướng bánh mì, kẹp xúc xích, dưa leo và cà chua.",
-      "image": "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r7",
-      "name": "Sườn xào chua ngọt",
-      "required_ingredients": ["i7", "i41", "i15", "i24"],
-      "instructions": "Chiên sườn, sốt cùng tỏi, hành tây và nước cốt chanh đường.",
-      "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r8",
-      "name": "Cơm rang tôm",
-      "required_ingredients": ["i36", "i5", "i26", "i42"],
-      "instructions": "Rang cơm khô với tôm, trứng và hành lá băm.",
-      "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r9",
-      "name": "Salad táo phô mai",
-      "required_ingredients": ["i25", "i28", "i17"],
-      "instructions": "Thái táo lát mỏng, trộn cùng rau xà lách và phô mai.",
-      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r10",
-      "name": "Cà phê sữa đá",
-      "required_ingredients": ["i46", "i30"],
-      "instructions": "Pha cà phê đậm đặc, trộn với sữa đặc và thêm đá.",
-      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r11",
-      "name": "Gà kho gừng",
-      "required_ingredients": ["i2", "i41", "i42"],
-      "instructions": "Ướp gà với gừng, tỏi, kho đến khi cạn nước.",
-      "image": "https://images.unsplash.com/photo-1604908177453-1241c0a940e2?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r12",
-      "name": "Canh khoai tây nấu tôm",
-      "required_ingredients": ["i5", "i12", "i42"],
-      "instructions": "Nấu khoai tây với tôm và hành lá, nêm gia vị.",
-      "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r13",
-      "name": "Mực xào dứa",
-      "required_ingredients": ["i6", "i15", "i18", "i11"],
-      "instructions": "Xào mực với dứa, hành tây, ớt chuông và cà chua.",
-      "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r14",
-      "name": "Trứng ốp la phô mai",
-      "required_ingredients": ["i26", "i28", "i29"],
-      "instructions": "Chiên trứng, thêm phô mai và bơ lên trên.",
-      "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r15",
-      "name": "Sinh tố chuối sữa chua",
-      "required_ingredients": ["i49", "i31", "i27"],
-      "instructions": "Xay nhuyễn chuối, sữa chua và sữa tươi.",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r16",
-      "name": "Cháo lòng đỏ trứng",
-      "required_ingredients": ["i36", "i26", "i42"],
-      "instructions": "Nấu cháo, cho lòng đỏ trứng và hành lá vào.",
-      "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r17",
-      "name": "Súp lơ xào thịt bò",
-      "required_ingredients": ["i1", "i14", "i41"],
-      "instructions": "Xào thịt bò với súp lơ và tỏi.",
-      "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r18",
-      "name": "Cơm chiên dương châu",
-      "required_ingredients": ["i36", "i5", "i7", "i26"],
-      "instructions": "Chiên cơm với tôm, sườn non, trứng và đậu Hà Lan.",
-      "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r19",
-      "name": "Súp nấm thịt gà",
-      "required_ingredients": ["i2", "i19", "i13", "i42"],
-      "instructions": "Nấu gà xé với nấm, cà rốt và hành lá.",
-      "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r20",
-      "name": "Khoai tây nghiền bơ",
-      "required_ingredients": ["i12", "i29", "i27"],
-      "instructions": "Luộc khoai, nghiền với bơ và sữa tươi.",
-      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r21",
-      "name": "Salad trứng cá ngừ",
-      "required_ingredients": ["i26", "i17", "i31"],
-      "instructions": "Trộn trứng luộc, xà lách và sốt sữa chua.",
-      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r22",
-      "name": "Mì xào bò viên",
-      "required_ingredients": ["i37", "i10", "i20", "i42"],
-      "instructions": "Xào mì tôm với bò viên, giá đỗ và hành lá.",
-      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r23",
-      "name": "Sườn nướng mật ong",
-      "required_ingredients": ["i7", "i45", "i41"],
-      "instructions": "Ướp sườn với mật ong và tỏi, nướng chín vàng.",
-      "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r24",
-      "name": "Canh rau muống nấu tôm",
-      "required_ingredients": ["i21", "i5", "i41"],
-      "instructions": "Nấu rau muống với tôm và tỏi phi thơm.",
-      "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r25",
-      "name": "Bánh kếp chuối sữa",
-      "required_ingredients": ["i40", "i27", "i26", "i49"],
-      "instructions": "Trộn bột, sữa, trứng, chuối cắt lát, chiên bánh.",
-      "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r26",
-      "name": "Cá kho tiêu",
-      "required_ingredients": ["i4", "i41", "i43"],
-      "instructions": "Kho cá hồi với tiêu, tỏi và ớt.",
-      "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r27",
-      "name": "Rau câu dừa",
-      "required_ingredients": ["i35", "i27", "i30"],
-      "instructions": "Hòa tan gelatin với cốt dừa, sữa tươi và sữa đặc, để đông.",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r28",
-      "name": "Khoai tây chiên",
-      "required_ingredients": ["i12", "i29"],
-      "instructions": "Cắt khoai tây que, chiên ngập dầu với bơ.",
-      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r29",
-      "name": "Trà chanh mật ong",
-      "required_ingredients": ["i47", "i24", "i45"],
-      "instructions": "Pha trà, thêm chanh và mật ong.",
-      "image": "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r30",
-      "name": "Chân gà sả ớt",
-      "required_ingredients": ["i9", "i43", "i41"],
-      "instructions": "Luộc chân gà, trộn với sả băm, ớt và tỏi.",
-      "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r31",
-      "name": "Cơm trắng",
-      "required_ingredients": ["i36"],
-      "instructions": "Nấu gạo với nước theo tỷ lệ 1:1.2.",
-      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r32",
-      "name": "Đậu phụ sốt cà chua",
-      "required_ingredients": ["i34", "i11", "i42"],
-      "instructions": "Chiên đậu phụ, sốt cùng cà chua và hành lá.",
-      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r33",
-      "name": "Bò cuộn phô mai",
-      "required_ingredients": ["i1", "i28", "i17"],
-      "instructions": "Cuộn thịt bò với phô mai và rau xà lách, áp chảo.",
-      "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r34",
-      "name": "Súp lơ xào tỏi",
-      "required_ingredients": ["i14", "i41", "i29"],
-      "instructions": "Xào súp lơ với tỏi và bơ.",
-      "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r35",
-      "name": "Sữa chua dẻo trái cây",
-      "required_ingredients": ["i31", "i25", "i45"],
-      "instructions": "Trộn sữa chua với táo thái hạt lựu và mật ong.",
-      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r36",
-      "name": "Mì tôm gà",
-      "required_ingredients": ["i37", "i2", "i20", "i42"],
-      "instructions": "Nấu nước dùng từ gà, ăn kèm mì tôm, giá đỗ, hành lá.",
-      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r37",
-      "name": "Bò lúc lắc",
-      "required_ingredients": ["i1", "i15", "i17", "i41"],
-      "instructions": "Xào thịt bò với hành tây, tỏi, ăn kèm xà lách.",
-      "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r38",
-      "name": "Tôm chiên xù",
-      "required_ingredients": ["i5", "i40", "i26"],
-      "instructions": "Lăn tôm qua bột mì, trứng, chiên vàng.",
-      "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r39",
-      "name": "Kem chuối",
-      "required_ingredients": ["i49", "i32", "i27"],
-      "instructions": "Xay chuối với kem tươi và sữa tươi, đông lạnh.",
-      "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r40",
-      "name": "Bánh mì pate trứng",
-      "required_ingredients": ["i38", "i26", "i11", "i16"],
-      "instructions": "Phết pate lên bánh mì, thêm trứng ốp la, cà chua, dưa leo.",
-      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r41",
-      "name": "Gỏi cuốn tôm thịt",
-      "required_ingredients": ["i5", "i3", "i17", "i20"],
-      "instructions": "Cuốn tôm, thịt lợn, xà lách, giá đỗ trong bánh tráng.",
-      "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r42",
-      "name": "Cháo sườn non",
-      "required_ingredients": ["i36", "i7", "i42"],
-      "instructions": "Nấu cháo với sườn non, thêm hành lá.",
-      "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r43",
-      "name": "Rau muống luộc",
-      "required_ingredients": ["i21", "i41"],
-      "instructions": "Luộc rau muống, chấm nước mắm tỏi.",
-      "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r44",
-      "name": "Cánh gà chiên mắm",
-      "required_ingredients": ["i9", "i41", "i43"],
-      "instructions": "Chiên cánh gà, sốt với mắm tỏi ớt.",
-      "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r45",
-      "name": "Pasta sốt phô mai",
-      "required_ingredients": ["i39", "i28", "i32"],
-      "instructions": "Nấu pasta, trộn sốt phô mai và kem tươi.",
-      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r46",
-      "name": "Nước ép cà rốt cam",
-      "required_ingredients": ["i13", "i48"],
-      "instructions": "Ép cà rốt và cam, pha thêm đường.",
-      "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r47",
-      "name": "Bắp xào bơ",
-      "required_ingredients": ["i22", "i29", "i42"],
-      "instructions": "Xào bắp hạt với bơ và hành lá.",
-      "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r48",
-      "name": "Kim chi chiên cơm",
-      "required_ingredients": ["i36", "i23", "i26"],
-      "instructions": "Chiên cơm với kim chi và trứng.",
-      "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r49",
-      "name": "Sữa đậu nành nóng",
-      "required_ingredients": ["i44", "i27"],
-      "instructions": "Xay đậu đen, lọc lấy sữa, đun với sữa tươi.",
-      "image": "https://images.unsplash.com/photo-1551462147-37885abb3e4a?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r50",
-      "name": "Thịt kho trứng vịt",
-      "required_ingredients": ["i3", "i33", "i35"],
-      "instructions": "Kho thịt lợn với trứng vịt và nước dừa.",
-      "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r51",
-      "name": "Salad bò nướng",
-      "required_ingredients": ["i1", "i17", "i11", "i15"],
-      "instructions": "Trộn thịt bò nướng với xà lách, cà chua, hành tây.",
-      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r52",
-      "name": "Trứng chiên tròn",
-      "required_ingredients": ["i26", "i29"],
-      "instructions": "Chiên trứng ốp la với bơ lên trên.",
-      "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r53",
-      "name": "Mực nhồi thịt",
-      "required_ingredients": ["i6", "i3", "i19", "i41"],
-      "instructions": "Nhồi thịt lợn và nấm vào mực, hấp chín.",
-      "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r54",
-      "name": "Chè đậu đen",
-      "required_ingredients": ["i44", "i35", "i30"],
-      "instructions": "Nấu đậu đen với cốt dừa và sữa đặc.",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r55",
-      "name": "Xúc xích chiên trứng",
-      "required_ingredients": ["i8", "i26"],
-      "instructions": "Chiên xúc xích, đập trứng vào chảo.",
-      "image": "https://images.unsplash.com/photo-1541048612927-b2fac4715cde?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r56",
-      "name": "Bánh mì bò nướng",
-      "required_ingredients": ["i38", "i1", "i11", "i16"],
-      "instructions": "Kẹp thịt bò nướng, cà chua, dưa leo vào bánh mì.",
-      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r57",
-      "name": "Gà luộc rau răm",
-      "required_ingredients": ["i2", "i42"],
-      "instructions": "Luộc gà, ăn kèm rau răm và muối tiêu chanh.",
-      "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r58",
-      "name": "Cà chua nướng phô mai",
-      "required_ingredients": ["i11", "i28", "i41"],
-      "instructions": "Nướng cà chua với phô mai và tỏi.",
-      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r59",
-      "name": "Sinh tố xoài sữa chua",
-      "required_ingredients": ["i50", "i31"],
-      "instructions": "Xay xoài với sữa chua và đá.",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r60",
-      "name": "Mì tôm Nam Vang",
-      "required_ingredients": ["i37", "i5", "i3", "i20"],
-      "instructions": "Nấu nước dùng xương, ăn kèm mì tôm, tôm, thịt, giá đỗ.",
-      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r61",
-      "name": "Đậu hũ non sốt nấm",
-      "required_ingredients": ["i34", "i19", "i42"],
-      "instructions": "Sốt đậu hũ với nấm và hành lá.",
-      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r62",
-      "name": "Cá hồi sốt cam",
-      "required_ingredients": ["i4", "i48", "i45"],
-      "instructions": "Áp chảo cá hồi, sốt với nước cam và mật ong.",
-      "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r63",
-      "name": "Rau củ luộc chấm mắm",
-      "required_ingredients": ["i13", "i14", "i11"],
-      "instructions": "Luộc cà rốt, súp lơ, cà chua, chấm mắm gừng.",
-      "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r64",
-      "name": "Trứng ốp la hành",
-      "required_ingredients": ["i26", "i42"],
-      "instructions": "Chiên trứng với hành lá thái nhỏ.",
-      "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r65",
-      "name": "Cháo trai hến",
-      "required_ingredients": ["i36", "i2", "i42"],
-      "instructions": "Nấu cháo với thịt trai hến, thêm hành lá.",
-      "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r66",
-      "name": "Súp lơ cuộn thịt",
-      "required_ingredients": ["i14", "i1", "i36"],
-      "instructions": "Cuộn thịt bò trong lá súp lơ, hấp chín.",
-      "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r67",
-      "name": "Sinh tố chuối sữa",
-      "required_ingredients": ["i49", "i27"],
-      "instructions": "Xay chuối với sữa tươi và đá.",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r68",
-      "name": "Khoai lang luộc",
-      "required_ingredients": ["i12"],
-      "instructions": "Luộc khoai lang chín mềm.",
-      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r69",
-      "name": "Mực chiên giòn",
-      "required_ingredients": ["i6", "i40", "i26"],
-      "instructions": "Tẩm bột mì và trứng, chiên vàng mực.",
-      "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r70",
-      "name": "Sữa chua nếp cẩm",
-      "required_ingredients": ["i31", "i36"],
-      "instructions": "Trộn sữa chua với nếp cẩm nấu chín.",
-      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r71",
-      "name": "Gà chiên nước mắm",
-      "required_ingredients": ["i2", "i41", "i43"],
-      "instructions": "Chiên gà, sốt với nước mắm tỏi ớt.",
-      "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r72",
-      "name": "Trứng hấp thịt băm",
-      "required_ingredients": ["i26", "i1", "i42"],
-      "instructions": "Trộn trứng với thịt bò băm và hành lá, hấp chín.",
-      "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r73",
-      "name": "Cà phê trứng",
-      "required_ingredients": ["i46", "i26", "i30"],
-      "instructions": "Đánh bông lòng đỏ trứng với sữa đặc, pha cà phê.",
-      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r74",
-      "name": "Mì tôm trứng",
-      "required_ingredients": ["i37", "i26", "i42"],
-      "instructions": "Nấu mì tôm, thêm trứng và hành lá.",
-      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r75",
-      "name": "Bò nấu bia",
-      "required_ingredients": ["i1", "i15", "i13", "i41"],
-      "instructions": "Ninh thịt bò với bia, hành tây, cà rốt, tỏi.",
-      "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r76",
-      "name": "Tôm rang muối ớt",
-      "required_ingredients": ["i5", "i43", "i29"],
-      "instructions": "Rang tôm với muối ớt và bơ.",
-      "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r77",
-      "name": "Bánh mì chấm sữa",
-      "required_ingredients": ["i38", "i27"],
-      "instructions": "Chấm bánh mì vào sữa tươi nóng.",
-      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r78",
-      "name": "Sườn chiên mắm tỏi",
-      "required_ingredients": ["i7", "i41", "i43"],
-      "instructions": "Chiên sườn, sốt mắm tỏi ớt.",
-      "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r79",
-      "name": "Canh súp lơ thịt bò",
-      "required_ingredients": ["i1", "i14", "i42"],
-      "instructions": "Nấu canh súp lơ với thịt bò và hành lá.",
-      "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400",
-      "servings": 3
-    },
-    {
-      "id": "r80",
-      "name": "Bánh bao chay",
-      "required_ingredients": ["i40", "i34", "i19"],
-      "instructions": "Nhân đậu phụ và nấm, bọc bột mì, hấp chín.",
-      "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r81",
-      "name": "Ớt chuông nhồi phô mai",
-      "required_ingredients": ["i18", "i28", "i26"],
-      "instructions": "Nhồi phô mai và trứng vào ớt chuông, nướng chín.",
-      "image": "https://images.unsplash.com/photo-1563513331620-ca78fe90d2c2?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r82",
-      "name": "Sinh tố xoài mật ong",
-      "required_ingredients": ["i50", "i27", "i45"],
-      "instructions": "Xay xoài với sữa tươi và mật ong.",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r83",
-      "name": "Mì Ý sốt kem nấm",
-      "required_ingredients": ["i39", "i32", "i19", "i41"],
-      "instructions": "Nấu sốt kem nấm với tỏi, trộn cùng mì.",
-      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r84",
-      "name": "Trứng chiên sốt cà",
-      "required_ingredients": ["i26", "i11", "i42"],
-      "instructions": "Chiên trứng, sốt cà chua và hành lá.",
-      "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r85",
-      "name": "Cháo cá hồi",
-      "required_ingredients": ["i36", "i4", "i42"],
-      "instructions": "Nấu cháo với cá hồi và hành lá.",
-      "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r86",
-      "name": "Khoai tây chiên bơ",
-      "required_ingredients": ["i12", "i29", "i41"],
-      "instructions": "Chiên khoai tây với bơ và tỏi.",
-      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r87",
-      "name": "Nước ép táo cà rốt",
-      "required_ingredients": ["i25", "i13"],
-      "instructions": "Ép táo và cà rốt, thêm đá.",
-      "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r88",
-      "name": "Bò viên chiên",
-      "required_ingredients": ["i10", "i40", "i26"],
-      "instructions": "Lăn bò viên qua bột mì và trứng, chiên vàng.",
-      "image": "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r89",
-      "name": "Rau muống xào tỏi",
-      "required_ingredients": ["i21", "i41"],
-      "instructions": "Xào rau muống với tỏi phi.",
-      "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r90",
-      "name": "Pudding sữa chua",
-      "required_ingredients": ["i31", "i27", "i45"],
-      "instructions": "Trộn sữa chua, sữa tươi, mật ong, để đông.",
-      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r91",
-      "name": "Sụn gà chiên",
-      "required_ingredients": ["i9", "i41", "i43"],
-      "instructions": "Chiên sụn gà với tỏi và ớt.",
-      "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r92",
-      "name": "Cơm nắm rong biển",
-      "required_ingredients": ["i36", "i5", "i26"],
-      "instructions": "Nắm cơm cùng tôm và trứng, cuộn rong biển.",
-      "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r93",
-      "name": "Súp cà rốt kem",
-      "required_ingredients": ["i13", "i32", "i27"],
-      "instructions": "Nấu cà rốt với kem tươi và sữa tươi, xay nhuyễn.",
-      "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r94",
-      "name": "Bánh khoai mì nướng",
-      "required_ingredients": ["i12", "i35", "i30"],
-      "instructions": "Trộn khoai mì với cốt dừa và sữa đặc, nướng chín.",
-      "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r95",
-      "name": "Gỏi xoài tôm khô",
-      "required_ingredients": ["i50", "i5", "i16"],
-      "instructions": "Trộn xoài bào sợi với tôm khô và dưa leo.",
-      "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r96",
-      "name": "Lẩu thái hải sản",
-      "required_ingredients": ["i5", "i6", "i11", "i24"],
-      "instructions": "Nấu nước lẩu chua cay, thả tôm, mực, cà chua, chanh.",
-      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
-      "servings": 4
-    },
-    {
-      "id": "r97",
-      "name": "Chả trứng hấp",
-      "required_ingredients": ["i26", "i19", "i42"],
-      "instructions": "Trộn trứng với nấm và hành lá, hấp chín.",
-      "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400",
-      "servings": 2
-    },
-    {
-      "id": "r98",
-      "name": "Nước sâm",
-      "required_ingredients": ["i45", "i27"],
-      "instructions": "Pha sâm bổ lượng với mật ong và sữa tươi.",
-      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r99",
-      "name": "Pizza trứng phô mai",
-      "required_ingredients": ["i38", "i26", "i28", "i11"],
-      "instructions": "Trải bánh mì, thêm trứng, phô mai, cà chua, nướng.",
-      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400",
-      "servings": 1
-    },
-    {
-      "id": "r100",
-      "name": "Chuối nếp nướng",
-      "required_ingredients": ["i49", "i36", "i35"],
-      "instructions": "Bọc chuối trong nếp, nướng với cốt dừa.",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
-      "servings": 2
-    }
+    { "id": "r1", "name": "Bò sốt vang", "required_ingredients": ["i1", "i12", "i13", "i41"], "instructions": "Ninh thịt bò với khoai tây, cà rốt và tỏi cho đến khi mềm nhừ.", "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400", "servings": 4, "cookingTime": 90 },
+    { "id": "r2", "name": "Cá hồi áp chảo", "required_ingredients": ["i4", "i29", "i41", "i24"], "instructions": "Cá hồi ướp muối tiêu, áp chảo với bơ và tỏi, vắt thêm chanh.", "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r3", "name": "Trứng chiên hành lá", "required_ingredients": ["i26", "i42"], "instructions": "Đánh tan trứng với hành lá rồi chiên vàng trên chảo.", "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400", "servings": 2, "cookingTime": 10 },
+    { "id": "r4", "name": "Mì Ý sốt cà chua", "required_ingredients": ["i39", "i11", "i1", "i41"], "instructions": "Luộc mì, làm sốt cà chua với thịt bò băm và tỏi.", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400", "servings": 2, "cookingTime": 30 },
+    { "id": "r5", "name": "Canh chua cá hồi", "required_ingredients": ["i4", "i11", "i24", "i43"], "instructions": "Nấu cá hồi với cà chua, chanh và ớt tạo vị chua cay.", "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400", "servings": 3, "cookingTime": 35 },
+    { "id": "r6", "name": "Bánh mì kẹp xúc xích", "required_ingredients": ["i38", "i8", "i11", "i16"], "instructions": "Nướng bánh mì, kẹp xúc xích, dưa leo và cà chua.", "image": "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r7", "name": "Sườn xào chua ngọt", "required_ingredients": ["i7", "i41", "i15", "i24"], "instructions": "Chiên sườn, sốt cùng tỏi, hành tây và nước cốt chanh đường.", "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400", "servings": 3, "cookingTime": 40 },
+    { "id": "r8", "name": "Cơm rang tôm", "required_ingredients": ["i36", "i5", "i26", "i42"], "instructions": "Rang cơm khô với tôm, trứng và hành lá băm.", "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r9", "name": "Salad táo phô mai", "required_ingredients": ["i25", "i28", "i17"], "instructions": "Thái táo lát mỏng, trộn cùng rau xà lách và phô mai.", "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r10", "name": "Cà phê sữa đá", "required_ingredients": ["i46", "i30"], "instructions": "Pha cà phê đậm đặc, trộn với sữa đặc và thêm đá.", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r11", "name": "Gà kho gừng", "required_ingredients": ["i2", "i41", "i42"], "instructions": "Ướp gà với gừng, tỏi, kho đến khi cạn nước.", "image": "https://images.unsplash.com/photo-1604908177453-1241c0a940e2?w=400", "servings": 3, "cookingTime": 45 },
+    { "id": "r12", "name": "Canh khoai tây nấu tôm", "required_ingredients": ["i5", "i12", "i42"], "instructions": "Nấu khoai tây với tôm và hành lá, nêm gia vị.", "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400", "servings": 4, "cookingTime": 30 },
+    { "id": "r13", "name": "Mực xào dứa", "required_ingredients": ["i6", "i15", "i18", "i11"], "instructions": "Xào mực với dứa, hành tây, ớt chuông và cà chua.", "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r14", "name": "Trứng ốp la phô mai", "required_ingredients": ["i26", "i28", "i29"], "instructions": "Chiên trứng, thêm phô mai và bơ lên trên.", "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r15", "name": "Sinh tố chuối sữa chua", "required_ingredients": ["i49", "i31", "i27"], "instructions": "Xay nhuyễn chuối, sữa chua và sữa tươi.", "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400", "servings": 2, "cookingTime": 5 },
+    { "id": "r16", "name": "Cháo lòng đỏ trứng", "required_ingredients": ["i36", "i26", "i42"], "instructions": "Nấu cháo, cho lòng đỏ trứng và hành lá vào.", "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r17", "name": "Súp lơ xào thịt bò", "required_ingredients": ["i1", "i14", "i41"], "instructions": "Xào thịt bò với súp lơ và tỏi.", "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400", "servings": 3, "cookingTime": 20 },
+    { "id": "r18", "name": "Cơm chiên dương châu", "required_ingredients": ["i36", "i5", "i7", "i26"], "instructions": "Chiên cơm với tôm, sườn non, trứng và đậu Hà Lan.", "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400", "servings": 3, "cookingTime": 30 },
+    { "id": "r19", "name": "Súp nấm thịt gà", "required_ingredients": ["i2", "i19", "i13", "i42"], "instructions": "Nấu gà xé với nấm, cà rốt và hành lá.", "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400", "servings": 4, "cookingTime": 40 },
+    { "id": "r20", "name": "Khoai tây nghiền bơ", "required_ingredients": ["i12", "i29", "i27"], "instructions": "Luộc khoai, nghiền với bơ và sữa tươi.", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r21", "name": "Salad trứng cá ngừ", "required_ingredients": ["i26", "i17", "i31"], "instructions": "Trộn trứng luộc, xà lách và sốt sữa chua.", "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r22", "name": "Mì xào bò viên", "required_ingredients": ["i37", "i10", "i20", "i42"], "instructions": "Xào mì tôm với bò viên, giá đỗ và hành lá.", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r23", "name": "Sườn nướng mật ong", "required_ingredients": ["i7", "i45", "i41"], "instructions": "Ướp sườn với mật ong và tỏi, nướng chín vàng.", "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400", "servings": 3, "cookingTime": 50 },
+    { "id": "r24", "name": "Canh rau muống nấu tôm", "required_ingredients": ["i21", "i5", "i41"], "instructions": "Nấu rau muống với tôm và tỏi phi thơm.", "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400", "servings": 3, "cookingTime": 25 },
+    { "id": "r25", "name": "Bánh kếp chuối sữa", "required_ingredients": ["i40", "i27", "i26", "i49"], "instructions": "Trộn bột, sữa, trứng, chuối cắt lát, chiên bánh.", "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r26", "name": "Cá kho tiêu", "required_ingredients": ["i4", "i41", "i43"], "instructions": "Kho cá hồi với tiêu, tỏi và ớt.", "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400", "servings": 2, "cookingTime": 35 },
+    { "id": "r27", "name": "Rau câu dừa", "required_ingredients": ["i35", "i27", "i30"], "instructions": "Hòa tan gelatin với cốt dừa, sữa tươi và sữa đặc, để đông.", "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400", "servings": 4, "cookingTime": 120 },
+    { "id": "r28", "name": "Khoai tây chiên", "required_ingredients": ["i12", "i29"], "instructions": "Cắt khoai tây que, chiên ngập dầu với bơ.", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r29", "name": "Trà chanh mật ong", "required_ingredients": ["i47", "i24", "i45"], "instructions": "Pha trà, thêm chanh và mật ong.", "image": "https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r30", "name": "Chân gà sả ớt", "required_ingredients": ["i9", "i43", "i41"], "instructions": "Luộc chân gà, trộn với sả băm, ớt và tỏi.", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400", "servings": 3, "cookingTime": 30 },
+    { "id": "r31", "name": "Cơm trắng", "required_ingredients": ["i36"], "instructions": "Nấu gạo với nước theo tỷ lệ 1:1.2.", "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r32", "name": "Đậu phụ sốt cà chua", "required_ingredients": ["i34", "i11", "i42"], "instructions": "Chiên đậu phụ, sốt cùng cà chua và hành lá.", "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r33", "name": "Bò cuộn phô mai", "required_ingredients": ["i1", "i28", "i17"], "instructions": "Cuộn thịt bò với phô mai và rau xà lách, áp chảo.", "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r34", "name": "Súp lơ xào tỏi", "required_ingredients": ["i14", "i41", "i29"], "instructions": "Xào súp lơ với tỏi và bơ.", "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r35", "name": "Sữa chua dẻo trái cây", "required_ingredients": ["i31", "i25", "i45"], "instructions": "Trộn sữa chua với táo thái hạt lựu và mật ong.", "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r36", "name": "Mì tôm gà", "required_ingredients": ["i37", "i2", "i20", "i42"], "instructions": "Nấu nước dùng từ gà, ăn kèm mì tôm, giá đỗ, hành lá.", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r37", "name": "Bò lúc lắc", "required_ingredients": ["i1", "i15", "i17", "i41"], "instructions": "Xào thịt bò với hành tây, tỏi, ăn kèm xà lách.", "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r38", "name": "Tôm chiên xù", "required_ingredients": ["i5", "i40", "i26"], "instructions": "Lăn tôm qua bột mì, trứng, chiên vàng.", "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r39", "name": "Kem chuối", "required_ingredients": ["i49", "i32", "i27"], "instructions": "Xay chuối với kem tươi và sữa tươi, đông lạnh.", "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r40", "name": "Bánh mì pate trứng", "required_ingredients": ["i38", "i26", "i11", "i16"], "instructions": "Phết pate lên bánh mì, thêm trứng ốp la, cà chua, dưa leo.", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r41", "name": "Gỏi cuốn tôm thịt", "required_ingredients": ["i5", "i3", "i17", "i20"], "instructions": "Cuốn tôm, thịt lợn, xà lách, giá đỗ trong bánh tráng.", "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400", "servings": 2, "cookingTime": 30 },
+    { "id": "r42", "name": "Cháo sườn non", "required_ingredients": ["i36", "i7", "i42"], "instructions": "Nấu cháo với sườn non, thêm hành lá.", "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400", "servings": 3, "cookingTime": 45 },
+    { "id": "r43", "name": "Rau muống luộc", "required_ingredients": ["i21", "i41"], "instructions": "Luộc rau muống, chấm nước mắm tỏi.", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400", "servings": 2, "cookingTime": 10 },
+    { "id": "r44", "name": "Cánh gà chiên mắm", "required_ingredients": ["i9", "i41", "i43"], "instructions": "Chiên cánh gà, sốt với mắm tỏi ớt.", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400", "servings": 3, "cookingTime": 35 },
+    { "id": "r45", "name": "Pasta sốt phô mai", "required_ingredients": ["i39", "i28", "i32"], "instructions": "Nấu pasta, trộn sốt phô mai và kem tươi.", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r46", "name": "Nước ép cà rốt cam", "required_ingredients": ["i13", "i48"], "instructions": "Ép cà rốt và cam, pha thêm đường.", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r47", "name": "Bắp xào bơ", "required_ingredients": ["i22", "i29", "i42"], "instructions": "Xào bắp hạt với bơ và hành lá.", "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r48", "name": "Kim chi chiên cơm", "required_ingredients": ["i36", "i23", "i26"], "instructions": "Chiên cơm với kim chi và trứng.", "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r49", "name": "Sữa đậu nành nóng", "required_ingredients": ["i44", "i27"], "instructions": "Xay đậu đen, lọc lấy sữa, đun với sữa tươi.", "image": "https://images.unsplash.com/photo-1551462147-37885abb3e4a?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r50", "name": "Thịt kho trứng vịt", "required_ingredients": ["i3", "i33", "i35"], "instructions": "Kho thịt lợn với trứng vịt và nước dừa.", "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=400", "servings": 4, "cookingTime": 60 },
+    { "id": "r51", "name": "Salad bò nướng", "required_ingredients": ["i1", "i17", "i11", "i15"], "instructions": "Trộn thịt bò nướng với xà lách, cà chua, hành tây.", "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r52", "name": "Trứng chiên tròn", "required_ingredients": ["i26", "i29"], "instructions": "Chiên trứng ốp la với bơ lên trên.", "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r53", "name": "Mực nhồi thịt", "required_ingredients": ["i6", "i3", "i19", "i41"], "instructions": "Nhồi thịt lợn và nấm vào mực, hấp chín.", "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=400", "servings": 3, "cookingTime": 40 },
+    { "id": "r54", "name": "Chè đậu đen", "required_ingredients": ["i44", "i35", "i30"], "instructions": "Nấu đậu đen với cốt dừa và sữa đặc.", "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400", "servings": 3, "cookingTime": 60 },
+    { "id": "r55", "name": "Xúc xích chiên trứng", "required_ingredients": ["i8", "i26"], "instructions": "Chiên xúc xích, đập trứng vào chảo.", "image": "https://images.unsplash.com/photo-1541048612927-b2fac4715cde?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r56", "name": "Bánh mì bò nướng", "required_ingredients": ["i38", "i1", "i11", "i16"], "instructions": "Kẹp thịt bò nướng, cà chua, dưa leo vào bánh mì.", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r57", "name": "Gà luộc rau răm", "required_ingredients": ["i2", "i42"], "instructions": "Luộc gà, ăn kèm rau răm và muối tiêu chanh.", "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400", "servings": 3, "cookingTime": 40 },
+    { "id": "r58", "name": "Cà chua nướng phô mai", "required_ingredients": ["i11", "i28", "i41"], "instructions": "Nướng cà chua với phô mai và tỏi.", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r59", "name": "Sinh tố xoài sữa chua", "required_ingredients": ["i50", "i31"], "instructions": "Xay xoài với sữa chua và đá.", "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r60", "name": "Mì tôm Nam Vang", "required_ingredients": ["i37", "i5", "i3", "i20"], "instructions": "Nấu nước dùng xương, ăn kèm mì tôm, tôm, thịt, giá đỗ.", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400", "servings": 2, "cookingTime": 30 },
+    { "id": "r61", "name": "Đậu hũ non sốt nấm", "required_ingredients": ["i34", "i19", "i42"], "instructions": "Sốt đậu hũ với nấm và hành lá.", "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r62", "name": "Cá hồi sốt cam", "required_ingredients": ["i4", "i48", "i45"], "instructions": "Áp chảo cá hồi, sốt với nước cam và mật ong.", "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r63", "name": "Rau củ luộc chấm mắm", "required_ingredients": ["i13", "i14", "i11"], "instructions": "Luộc cà rốt, súp lơ, cà chua, chấm mắm gừng.", "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r64", "name": "Trứng ốp la hành", "required_ingredients": ["i26", "i42"], "instructions": "Chiên trứng với hành lá thái nhỏ.", "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r65", "name": "Cháo trai hến", "required_ingredients": ["i36", "i2", "i42"], "instructions": "Nấu cháo với thịt trai hến, thêm hành lá.", "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400", "servings": 3, "cookingTime": 45 },
+    { "id": "r66", "name": "Súp lơ cuộn thịt", "required_ingredients": ["i14", "i1", "i36"], "instructions": "Cuộn thịt bò trong lá súp lơ, hấp chín.", "image": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?w=400", "servings": 3, "cookingTime": 40 },
+    { "id": "r67", "name": "Sinh tố chuối sữa", "required_ingredients": ["i49", "i27"], "instructions": "Xay chuối với sữa tươi và đá.", "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400", "servings": 2, "cookingTime": 5 },
+    { "id": "r68", "name": "Khoai lang luộc", "required_ingredients": ["i12"], "instructions": "Luộc khoai lang chín mềm.", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r69", "name": "Mực chiên giòn", "required_ingredients": ["i6", "i40", "i26"], "instructions": "Tẩm bột mì và trứng, chiên vàng mực.", "image": "https://images.unsplash.com/photo-1534123235302-1c113bb39485?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r70", "name": "Sữa chua nếp cẩm", "required_ingredients": ["i31", "i36"], "instructions": "Trộn sữa chua với nếp cẩm nấu chín.", "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r71", "name": "Gà chiên nước mắm", "required_ingredients": ["i2", "i41", "i43"], "instructions": "Chiên gà, sốt với nước mắm tỏi ớt.", "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400", "servings": 3, "cookingTime": 35 },
+    { "id": "r72", "name": "Trứng hấp thịt băm", "required_ingredients": ["i26", "i1", "i42"], "instructions": "Trộn trứng với thịt bò băm và hành lá, hấp chín.", "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r73", "name": "Cà phê trứng", "required_ingredients": ["i46", "i26", "i30"], "instructions": "Đánh bông lòng đỏ trứng với sữa đặc, pha cà phê.", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r74", "name": "Mì tôm trứng", "required_ingredients": ["i37", "i26", "i42"], "instructions": "Nấu mì tôm, thêm trứng và hành lá.", "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400", "servings": 1, "cookingTime": 10 },
+    { "id": "r75", "name": "Bò nấu bia", "required_ingredients": ["i1", "i15", "i13", "i41"], "instructions": "Ninh thịt bò với bia, hành tây, cà rốt, tỏi.", "image": "https://images.unsplash.com/photo-1534939561122-395078134700?w=400", "servings": 4, "cookingTime": 90 },
+    { "id": "r76", "name": "Tôm rang muối ớt", "required_ingredients": ["i5", "i43", "i29"], "instructions": "Rang tôm với muối ớt và bơ.", "image": "https://images.unsplash.com/photo-1559740038-f95df9fbee01?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r77", "name": "Bánh mì chấm sữa", "required_ingredients": ["i38", "i27"], "instructions": "Chấm bánh mì vào sữa tươi nóng.", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r78", "name": "Sườn chiên mắm tỏi", "required_ingredients": ["i7", "i41", "i43"], "instructions": "Chiên sườn, sốt mắm tỏi ớt.", "image": "https://images.unsplash.com/photo-1544073627-467f33ad037e?w=400", "servings": 3, "cookingTime": 35 },
+    { "id": "r79", "name": "Canh súp lơ thịt bò", "required_ingredients": ["i1", "i14", "i42"], "instructions": "Nấu canh súp lơ với thịt bò và hành lá.", "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400", "servings": 3, "cookingTime": 30 },
+    { "id": "r80", "name": "Bánh bao chay", "required_ingredients": ["i40", "i34", "i19"], "instructions": "Nhân đậu phụ và nấm, bọc bột mì, hấp chín.", "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400", "servings": 4, "cookingTime": 45 },
+    { "id": "r81", "name": "Ớt chuông nhồi phô mai", "required_ingredients": ["i18", "i28", "i26"], "instructions": "Nhồi phô mai và trứng vào ớt chuông, nướng chín.", "image": "https://images.unsplash.com/photo-1563513331620-ca78fe90d2c2?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r82", "name": "Sinh tố xoài mật ong", "required_ingredients": ["i50", "i27", "i45"], "instructions": "Xay xoài với sữa tươi và mật ong.", "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r83", "name": "Mì Ý sốt kem nấm", "required_ingredients": ["i39", "i32", "i19", "i41"], "instructions": "Nấu sốt kem nấm với tỏi, trộn cùng mì.", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400", "servings": 2, "cookingTime": 30 },
+    { "id": "r84", "name": "Trứng chiên sốt cà", "required_ingredients": ["i26", "i11", "i42"], "instructions": "Chiên trứng, sốt cà chua và hành lá.", "image": "https://images.unsplash.com/photo-1494597564530-897b5a513c71?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r85", "name": "Cháo cá hồi", "required_ingredients": ["i36", "i4", "i42"], "instructions": "Nấu cháo với cá hồi và hành lá.", "image": "https://images.unsplash.com/photo-1512058454901-5f6b7a7c9a6e?w=400", "servings": 2, "cookingTime": 30 },
+    { "id": "r86", "name": "Khoai tây chiên bơ", "required_ingredients": ["i12", "i29", "i41"], "instructions": "Chiên khoai tây với bơ và tỏi.", "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r87", "name": "Nước ép táo cà rốt", "required_ingredients": ["i25", "i13"], "instructions": "Ép táo và cà rốt, thêm đá.", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r88", "name": "Bò viên chiên", "required_ingredients": ["i10", "i40", "i26"], "instructions": "Lăn bò viên qua bột mì và trứng, chiên vàng.", "image": "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r89", "name": "Rau muống xào tỏi", "required_ingredients": ["i21", "i41"], "instructions": "Xào rau muống với tỏi phi.", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400", "servings": 2, "cookingTime": 10 },
+    { "id": "r90", "name": "Pudding sữa chua", "required_ingredients": ["i31", "i27", "i45"], "instructions": "Trộn sữa chua, sữa tươi, mật ong, để đông.", "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400", "servings": 2, "cookingTime": 60 },
+    { "id": "r91", "name": "Sụn gà chiên", "required_ingredients": ["i9", "i41", "i43"], "instructions": "Chiên sụn gà với tỏi và ớt.", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r92", "name": "Cơm nắm rong biển", "required_ingredients": ["i36", "i5", "i26"], "instructions": "Nắm cơm cùng tôm và trứng, cuộn rong biển.", "image": "https://images.unsplash.com/photo-1603133872878-6858488e7a82?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r93", "name": "Súp cà rốt kem", "required_ingredients": ["i13", "i32", "i27"], "instructions": "Nấu cà rốt với kem tươi và sữa tươi, xay nhuyễn.", "image": "https://images.unsplash.com/photo-1547592180-85c2a2c0c7f4?w=400", "servings": 2, "cookingTime": 25 },
+    { "id": "r94", "name": "Bánh khoai mì nướng", "required_ingredients": ["i12", "i35", "i30"], "instructions": "Trộn khoai mì với cốt dừa và sữa đặc, nướng chín.", "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400", "servings": 4, "cookingTime": 45 },
+    { "id": "r95", "name": "Gỏi xoài tôm khô", "required_ingredients": ["i50", "i5", "i16"], "instructions": "Trộn xoài bào sợi với tôm khô và dưa leo.", "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400", "servings": 2, "cookingTime": 15 },
+    { "id": "r96", "name": "Lẩu thái hải sản", "required_ingredients": ["i5", "i6", "i11", "i24"], "instructions": "Nấu nước lẩu chua cay, thả tôm, mực, cà chua, chanh.", "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400", "servings": 4, "cookingTime": 45 },
+    { "id": "r97", "name": "Chả trứng hấp", "required_ingredients": ["i26", "i19", "i42"], "instructions": "Trộn trứng với nấm và hành lá, hấp chín.", "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400", "servings": 2, "cookingTime": 20 },
+    { "id": "r98", "name": "Nước sâm", "required_ingredients": ["i45", "i27"], "instructions": "Pha sâm bổ lượng với mật ong và sữa tươi.", "image": "https://images.unsplash.com/photo-1556881286-fc6915169721?w=400", "servings": 1, "cookingTime": 5 },
+    { "id": "r99", "name": "Pizza trứng phô mai", "required_ingredients": ["i38", "i26", "i28", "i11"], "instructions": "Trải bánh mì, thêm trứng, phô mai, cà chua, nướng.", "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400", "servings": 1, "cookingTime": 15 },
+    { "id": "r100", "name": "Chuối nếp nướng", "required_ingredients": ["i49", "i36", "i35"], "instructions": "Bọc chuối trong nếp, nướng với cốt dừa.", "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400", "servings": 2, "cookingTime": 30 }
   ],
   "diningCategories": ["Tất cả", "Đồ chay", "Món mặn", "Đồ khô", "Nước giải khát", "Đồ ngọt"],
   "diningRecipes": [
@@ -869,8 +173,7 @@
       "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400",
       "description": "Phở bò tái nước dùng đậm đà, thơm mùi quế hồi.",
       "price": "45.000đ",
-      "restaurant": "Phở Thìn",
-      "points": 0
+      "restaurant": "Phở Thìn"
     },
     {
       "id": "d2",
@@ -879,8 +182,7 @@
       "image": "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?w=400",
       "description": "Bánh mì kẹp chay với đậu hũ, rau củ sốt đặc biệt.",
       "price": "25.000đ",
-      "restaurant": "Bánh mì chay Hương",
-      "points": 0
+      "restaurant": "Bánh mì chay Hương"
     },
     {
       "id": "d3",
@@ -889,8 +191,7 @@
       "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=400",
       "description": "Gỏi cuốn tươi, chấm nước mắm pha.",
       "price": "35.000đ",
-      "restaurant": "Quán Cô Bảy",
-      "points": 0
+      "restaurant": "Quán Cô Bảy"
     },
     {
       "id": "d4",
@@ -899,8 +200,7 @@
       "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
       "description": "Trà sữa thơm béo, trân châu dai giòn.",
       "price": "30.000đ",
-      "restaurant": "Trà sữa TocoToco",
-      "points": 0
+      "restaurant": "Trà sữa TocoToco"
     },
     {
       "id": "d5",
@@ -909,8 +209,7 @@
       "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
       "description": "Chè thái trái cây nhiệt đới, nước cốt dừa béo.",
       "price": "20.000đ",
-      "restaurant": "Chè Cô Ba",
-      "points": 0
+      "restaurant": "Chè Cô Ba"
     }
   ]
 }
