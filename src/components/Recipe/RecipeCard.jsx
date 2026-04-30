@@ -12,7 +12,6 @@ const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints 
     selectedIngredients.includes(id)
   ).length || 0;
 
-  // Kiểm tra nếu là món đi ăn ngoài (có price hoặc restaurant)
   const isDining = !!recipe.price || !!recipe.restaurant;
 
   return (
@@ -20,7 +19,6 @@ const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints 
       <div className="relative h-44 overflow-hidden">
         <img src={recipe.image} alt={recipe.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
         
-        {/* Favorite button */}
         <button 
           onClick={(e) => { e.stopPropagation(); onToggleFavorite(recipe.id); }}
           className={`absolute top-3 right-3 p-2 rounded-xl backdrop-blur-md transition-all z-10 ${isFavorite ? 'bg-orange-500 text-white shadow-lg' : 'bg-white/80 text-gray-400 hover:text-orange-500'}`}
@@ -28,7 +26,6 @@ const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints 
           <Heart size={16} fill={isFavorite ? "currentColor" : "none"} />
         </button>
 
-        {/* Edit/Delete buttons for user recipes */}
         {showEditDelete && (
           <div className="absolute bottom-3 left-3 flex gap-2 z-10">
             <button onClick={(e) => { e.stopPropagation(); onEdit(); }} className="p-2 bg-white/90 rounded-xl text-gray-700 hover:bg-orange-500 hover:text-white transition-all">
@@ -60,15 +57,18 @@ const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints 
           )}
         </div>
 
-        {/* Chỉ hiển thị thời gian và số người nếu không phải món đi ăn */}
         {!isDining && (
           <div className="flex items-center gap-4 text-gray-400 font-bold text-[10px] uppercase mb-4 mt-auto">
-            <div className="flex items-center gap-1"><Clock size={12} /> 30-45p</div>
-            <div className="flex items-center gap-1"><Users size={12} /> {recipe.servings} người</div>
+            <div className="flex items-center gap-1">
+              <Clock size={12} />
+              {recipe.cookingTime ? `${recipe.cookingTime} phút` : '30-45p'}
+            </div>
+            <div className="flex items-center gap-1">
+              <Users size={12} /> {recipe.servings} người
+            </div>
           </div>
         )}
 
-        {/* Nếu là món đi ăn, thêm một div trống để giữ layout hoặc có thể thêm giá */}
         {isDining && (
           <div className="mb-4 mt-auto">
             <p className="text-xs text-orange-500 font-bold">{recipe.price}</p>

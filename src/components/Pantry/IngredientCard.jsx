@@ -1,15 +1,21 @@
 import React from 'react';
 
 const IngredientCard = ({ ingredient, isSelected, onToggle }) => {
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData('text/plain', ingredient.id);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
   return (
     <div 
+      draggable
+      onDragStart={handleDragStart}
       onClick={() => onToggle(ingredient.id)}
-      className={`relative cursor-pointer rounded-2xl p-2 transition-all duration-300 border-4 flex flex-col items-center group
+      className={`relative cursor-grab active:cursor-grabbing rounded-2xl p-2 transition-all duration-300 border-4 flex flex-col items-center group
         ${isSelected 
           ? 'border-orange-500 bg-orange-50 scale-95 shadow-inner' 
           : 'border-gray-300 bg-white shadow-sm hover:shadow-md hover:border-orange-200 hover:scale-105'}`}
     >
-      {/* Badge Checkmark */}
       {isSelected && (
         <div className="absolute top-1 right-1 bg-orange-500 text-white rounded-full p-1 shadow-lg z-10">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">

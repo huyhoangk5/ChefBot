@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, ShoppingCart, Trophy, Utensils, Heart, Store } from 'lucide-react';
+import { X, CheckCircle2, ShoppingCart, Trophy, Utensils, Heart, Store, Clock } from 'lucide-react';
 
 const RecipeDetailModal = ({ isOpen, onClose, recipe, selectedIngredients, allIngredients, points = 0, isFavorite, onToggleFavorite, onCookSuccess }) => {
   if (!isOpen || !recipe) return null;
 
   const getIngredientInfo = (id) => allIngredients.find(ing => ing.id === id);
-  const isDining = !!recipe.price; // nếu có trường price thì là món đi ăn ngoài
+  const isDining = !!recipe.price;
 
   return (
     <AnimatePresence>
@@ -24,7 +24,6 @@ const RecipeDetailModal = ({ isOpen, onClose, recipe, selectedIngredients, allIn
             <h2 className="text-3xl font-black text-gray-800 uppercase mb-6 tracking-tighter">{recipe.name}</h2>
             
             {isDining ? (
-              // Hiển thị thông tin món ăn ngoài
               <>
                 <div className="mb-6 p-4 bg-gray-50 rounded-2xl space-y-2">
                   <p className="text-sm text-gray-600 flex items-center gap-2">
@@ -43,8 +42,15 @@ const RecipeDetailModal = ({ isOpen, onClose, recipe, selectedIngredients, allIn
                 </section>
               </>
             ) : (
-              // Hiển thị thông tin món nấu tại nhà
               <>
+                {/* Hiển thị thời gian nấu */}
+                {recipe.cookingTime && (
+                  <div className="mb-6 p-4 bg-orange-50 rounded-2xl flex items-center gap-2">
+                    <Clock size={18} className="text-orange-500" />
+                    <span className="font-bold text-gray-700">Thời gian nấu:</span>
+                    <span>{recipe.cookingTime} phút</span>
+                  </div>
+                )}
                 <section className="mb-8">
                   <h3 className="text-xs font-black text-orange-500 uppercase tracking-widest mb-4">Nguyên liệu</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

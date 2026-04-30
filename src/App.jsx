@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import data from './data/data.json';
 import IngredientCard from './components/Pantry/IngredientCard';
 import RecipeCard from './components/Recipe/RecipeCard';
-import { Search, Heart, X, ShoppingCart, PackageOpen, Utensils, Star, Plus, BookOpen, Filter } from 'lucide-react';
+import { Search, Heart, X, ShoppingCart, PackageOpen, Utensils, Star, Plus, BookOpen, Filter, Clock } from 'lucide-react';
 import RecipeModal from './components/Common/RecipeModal';
 import RecipeDetailModal from './components/Common/RecipeDetailModal';
 import CreateRecipeModal from './components/UGC/CreateRecipeModal';
@@ -21,9 +21,8 @@ function App() {
   const [mode, setMode] = useState('cook');
   const [selectedDiningCategory, setSelectedDiningCategory] = useState("Tất cả");
   
-  // === BỔ SUNG: state cho bộ lọc ===
   const [servingCount, setServingCount] = useState(1);
-  const [preferenceFilter, setPreferenceFilter] = useState('all'); // 'all', 'favorites', 'mostPoints'
+  const [preferenceFilter, setPreferenceFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
 
   const [userRecipes, setUserRecipes] = useLocalStorage('chefbot-user-recipes', []);
@@ -38,19 +37,113 @@ function App() {
   const [favorites, setFavorites] = useLocalStorage('chefbot-favorites', []);
   const [toast, setToast] = useState({ show: false, message: '' });
 
+  // Drag & drop ingredient overrides
+  const [ingredientCategoryOverrides, setIngredientCategoryOverrides] = useLocalStorage('chefbot-ingredient-categories', {});
+  // Dining recipes state (for edit/add/delete)
+  const [diningRecipes, setDiningRecipes] = useLocalStorage('chefbot-dining-recipes', data.diningRecipes || []);
+  const [isDiningModalOpen, setIsDiningModalOpen] = useState(false);
+  const [editingDining, setEditingDining] = useState(null);
+  const [diningForm, setDiningForm] = useState({ name: '', restaurant: '', price: '', category: 'Món mặn', description: '', image: '' });
+
   const searchRef = useRef(null);
 
+  // Merge categories & ingredients
   const allCategories = useMemo(() => [...data.categories, ...customCategories], [customCategories]);
   const allIngredients = useMemo(() => [...data.ingredients, ...customIngredients], [customIngredients]);
 
-  const diningRecipes = data.diningRecipes || [];
   const diningCategories = data.diningCategories || ["Tất cả", "Đồ chay", "Món mặn", "Đồ khô", "Nước giải khát", "Đồ ngọt"];
 
+  // Helper: get effective category (with user overrides)
+  const getEffectiveCategory = (ingredient) => {
+    return ingredientCategoryOverrides[ingredient.id] || ingredient.category;
+  };
+
+  // Filter ingredients based on effective category
+  const filteredIngredients = useMemo(() => {
+    const list = activeTab === "Tất cả"
+      ? [...allIngredients]
+      : allIngredients.filter(item => getEffectiveCategory(item) === activeTab);
+    return list.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+  }, [activeTab, allIngredients, ingredientCategoryOverrides]);
+
+  // Filter dining recipes (using state, not data.json)
   const filteredDining = useMemo(() => {
     if (selectedDiningCategory === "Tất cả") return diningRecipes;
     return diningRecipes.filter(item => item.category === selectedDiningCategory);
   }, [selectedDiningCategory, diningRecipes]);
 
+  // Drag & drop handlers
+  const handleDragOver = (e) => e.preventDefault();
+  const handleDropOnCategory = (targetCategory, e) => {
+    e.preventDefault();
+    if (targetCategory === "Tất cả") return;
+    const ingredientId = e.dataTransfer.getData('text/plain');
+    if (!ingredientId) return;
+    setIngredientCategoryOverrides(prev => ({ ...prev, [ingredientId]: targetCategory }));
+    const ing = allIngredients.find(i => i.id === ingredientId);
+    if (ing) {
+      setToast({ show: true, message: `Đã chuyển "${ing.name}" sang "${targetCategory}"` });
+      setTimeout(() => setToast({ show: false, message: '' }), 2000);
+    }
+  };
+
+  // Dining CRUD handlers
+  const updateDiningRecipe = (updatedRecipe) => {
+    setDiningRecipes(prev => prev.map(r => r.id === updatedRecipe.id ? updatedRecipe : r));
+    setToast({ show: true, message: `Đã cập nhật món "${updatedRecipe.name}"` });
+    setTimeout(() => setToast({ show: false, message: '' }), 3000);
+  };
+  const addDiningRecipe = (newRecipe) => {
+    const newId = `dining_${Date.now()}`;
+    const recipeToAdd = { ...newRecipe, id: newId };
+    setDiningRecipes(prev => [...prev, recipeToAdd]);
+    setToast({ show: true, message: `Đã thêm món "${newRecipe.name}" vào danh sách ăn ngoài` });
+    setTimeout(() => setToast({ show: false, message: '' }), 3000);
+  };
+  const deleteDiningRecipe = (id, name) => {
+    if (window.confirm(`Xóa món "${name}"?`)) {
+      setDiningRecipes(prev => prev.filter(r => r.id !== id));
+      setToast({ show: true, message: `Đã xóa "${name}"` });
+      setTimeout(() => setToast({ show: false, message: '' }), 2000);
+    }
+  };
+  const openEditDiningModal = (recipe) => {
+    setEditingDining(recipe);
+    setDiningForm({
+      name: recipe.name,
+      restaurant: recipe.restaurant,
+      price: recipe.price,
+      category: recipe.category,
+      description: recipe.description,
+      image: recipe.image || ''
+    });
+    setIsDiningModalOpen(true);
+  };
+  const handleSaveDining = () => {
+    if (!diningForm.name || !diningForm.restaurant || !diningForm.price) {
+      alert("Vui lòng điền đủ tên, quán và giá");
+      return;
+    }
+    const newRecipe = {
+      ...(editingDining || {}),
+      name: diningForm.name,
+      restaurant: diningForm.restaurant,
+      price: diningForm.price,
+      category: diningForm.category,
+      description: diningForm.description,
+      image: diningForm.image || 'https://images.unsplash.com/photo-1495195129352-aec329a7ed7a?w=400'
+    };
+    if (editingDining) {
+      updateDiningRecipe(newRecipe);
+    } else {
+      addDiningRecipe(newRecipe);
+    }
+    setIsDiningModalOpen(false);
+    setEditingDining(null);
+    setDiningForm({ name: '', restaurant: '', price: '', category: 'Món mặn', description: '', image: '' });
+  };
+
+  // Click outside search
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -76,31 +169,24 @@ function App() {
     });
   }, [userRecipes, favorites, recipePoints]);
 
-  // Effect loading khi thay đổi bộ lọc
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
   }, [selectedIngredients, servingCount, preferenceFilter]);
 
-  // === SỬA LẠI HÀM suggestedRecipes ===
   const suggestedRecipes = useMemo(() => {
     if (selectedIngredients.length === 0) return [];
-    
-    // Bước 1: Lọc theo nguyên liệu và số người ăn
     let filtered = allRecipes.filter(r => 
       r.required_ingredients && 
       r.required_ingredients.some(id => selectedIngredients.includes(id)) &&
       (r.servings >= servingCount)
     );
-    
-    // Bước 2: Áp dụng bộ lọc sở thích
     if (preferenceFilter === 'favorites') {
       filtered = filtered.filter(r => favorites.includes(r.id));
     } else if (preferenceFilter === 'mostPoints') {
       filtered = [...filtered].sort((a, b) => (recipePoints[b.id] || 0) - (recipePoints[a.id] || 0));
     } else {
-      // Mặc định: sắp xếp theo độ khớp nguyên liệu
       filtered = filtered.sort((a, b) => {
         const matchA = a.required_ingredients.filter(id => selectedIngredients.includes(id)).length;
         const matchB = b.required_ingredients.filter(id => selectedIngredients.includes(id)).length;
@@ -146,13 +232,6 @@ function App() {
 
     return [...matchedIngredients, ...matchedCookRecipes, ...matchedDiningRecipes];
   }, [searchQuery, favorites, recipePoints, allRecipes, allIngredients, diningRecipes]);
-
-  const filteredIngredients = useMemo(() => {
-    const list = activeTab === "Tất cả"
-      ? [...allIngredients]
-      : allIngredients.filter(item => item.category === activeTab);
-    return list.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
-  }, [activeTab, allIngredients]);
 
   const addCustomIngredient = (name, category) => {
     const newId = `custom_ing_${Date.now()}`;
@@ -393,7 +472,6 @@ function App() {
 
         {mode === 'cook' ? (
           <>
-            {/* Bộ lọc số người và sở thích */}
             <div className="flex flex-wrap gap-4 items-center justify-between mb-6 bg-white p-4 rounded-2xl shadow-sm">
               <div className="flex items-center gap-3">
                 <span className="text-sm font-bold text-gray-600">Số người ăn:</span>
@@ -420,7 +498,6 @@ function App() {
               </div>
             </div>
 
-            {/* Danh mục nguyên liệu */}
             <div className="mb-8">
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
                 <button
@@ -437,6 +514,8 @@ function App() {
                   <button
                     key={cat}
                     onClick={() => setActiveTab(cat)}
+                    onDragOver={handleDragOver}
+                    onDrop={(e) => handleDropOnCategory(cat, e)}
                     className={`px-4 py-2.5 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center ${
                       activeTab === cat
                         ? 'bg-orange-500 text-white border-orange-600 shadow-md'
@@ -473,7 +552,7 @@ function App() {
           </>
         ) : (
           <>
-            <div className="mb-8">
+            <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
                 {diningCategories.map(cat => (
                   <button
@@ -489,6 +568,12 @@ function App() {
                   </button>
                 ))}
               </div>
+              <button
+                onClick={() => { setEditingDining(null); setIsDiningModalOpen(true); }}
+                className="px-4 py-2 bg-orange-500 text-white rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:bg-orange-600"
+              >
+                <Plus size={16} /> Thêm món
+              </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredDining.map(recipe => (
@@ -501,7 +586,9 @@ function App() {
                   favorites={favorites}
                   onToggleFavorite={toggleFavorite}
                   onCookSuccess={handleEatOut}
-                  showEditDelete={false}
+                  showEditDelete={true}
+                  onEdit={() => openEditDiningModal(recipe)}
+                  onDelete={() => deleteDiningRecipe(recipe.id, recipe.name)}
                 />
               ))}
             </div>
@@ -578,6 +665,30 @@ function App() {
         isFavorite={directViewRecipe ? favorites.includes(directViewRecipe.id) : false}
         onToggleFavorite={toggleFavorite} onCookSuccess={directViewRecipe?.price ? handleEatOut : handleCookLogic}
       />
+
+      {/* Dining Form Modal */}
+      <AnimatePresence>
+        {isDiningModalOpen && (
+          <div className="fixed inset-0 z-[300] flex items-center justify-center p-4">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsDiningModalOpen(false)} className="absolute inset-0 bg-black/70 backdrop-blur-md" />
+            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="relative bg-white w-full max-w-md rounded-2xl p-6 max-h-[90vh] overflow-y-auto">
+              <h2 className="text-xl font-bold mb-4">{editingDining ? 'Sửa món' : 'Thêm món ăn ngoài'}</h2>
+              <input type="text" placeholder="Tên món" value={diningForm.name} onChange={e => setDiningForm({...diningForm, name: e.target.value})} className="w-full p-2 border rounded mb-2" />
+              <input type="text" placeholder="Quán / Nhà hàng" value={diningForm.restaurant} onChange={e => setDiningForm({...diningForm, restaurant: e.target.value})} className="w-full p-2 border rounded mb-2" />
+              <input type="text" placeholder="Giá (ví dụ: 50.000đ)" value={diningForm.price} onChange={e => setDiningForm({...diningForm, price: e.target.value})} className="w-full p-2 border rounded mb-2" />
+              <select value={diningForm.category} onChange={e => setDiningForm({...diningForm, category: e.target.value})} className="w-full p-2 border rounded mb-2">
+                {diningCategories.filter(c => c !== "Tất cả").map(c => <option key={c}>{c}</option>)}
+              </select>
+              <textarea placeholder="Mô tả món" value={diningForm.description} onChange={e => setDiningForm({...diningForm, description: e.target.value})} className="w-full p-2 border rounded mb-2" rows="3" />
+              <input type="text" placeholder="URL ảnh (tuỳ chọn)" value={diningForm.image} onChange={e => setDiningForm({...diningForm, image: e.target.value})} className="w-full p-2 border rounded mb-4" />
+              <div className="flex gap-2">
+                <button onClick={handleSaveDining} className="flex-1 py-2 bg-orange-500 text-white rounded-xl font-bold">Lưu</button>
+                <button onClick={() => setIsDiningModalOpen(false)} className="flex-1 py-2 bg-gray-200 rounded-xl">Huỷ</button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
