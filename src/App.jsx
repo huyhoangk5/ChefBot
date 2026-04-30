@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import data from './data/data.json';
 import IngredientCard from './components/Pantry/IngredientCard';
 import RecipeCard from './components/Recipe/RecipeCard';
-import { Search, Heart, X, ShoppingCart, PackageOpen, Utensils, Star, Plus, BookOpen, Filter, Clock } from 'lucide-react';
+import { Search, Heart, X, ShoppingCart, PackageOpen, Utensils, Star, Plus, BookOpen } from 'lucide-react';
 import RecipeModal from './components/Common/RecipeModal';
 import RecipeDetailModal from './components/Common/RecipeDetailModal';
 import CreateRecipeModal from './components/UGC/CreateRecipeModal';
@@ -20,10 +20,6 @@ function App() {
   const [showSearchDropdown, setShowSearchDropdown] = useState(false);
   const [mode, setMode] = useState('cook');
   const [selectedDiningCategory, setSelectedDiningCategory] = useState("Tất cả");
-  
-  const [servingCount, setServingCount] = useState(1);
-  const [preferenceFilter, setPreferenceFilter] = useState('all');
-  const [isLoading, setIsLoading] = useState(false);
 
   const [userRecipes, setUserRecipes] = useLocalStorage('chefbot-user-recipes', []);
   const [customIngredients, setCustomIngredients] = useLocalStorage('chefbot-custom-ingredients', []);
@@ -39,7 +35,7 @@ function App() {
 
   // Drag & drop ingredient overrides
   const [ingredientCategoryOverrides, setIngredientCategoryOverrides] = useLocalStorage('chefbot-ingredient-categories', {});
-  // Dining recipes state (for edit/add/delete)
+  // Dining recipes state
   const [diningRecipes, setDiningRecipes] = useLocalStorage('chefbot-dining-recipes', data.diningRecipes || []);
   const [isDiningModalOpen, setIsDiningModalOpen] = useState(false);
   const [editingDining, setEditingDining] = useState(null);
@@ -47,18 +43,14 @@ function App() {
 
   const searchRef = useRef(null);
 
-  // Merge categories & ingredients
   const allCategories = useMemo(() => [...data.categories, ...customCategories], [customCategories]);
   const allIngredients = useMemo(() => [...data.ingredients, ...customIngredients], [customIngredients]);
-
   const diningCategories = data.diningCategories || ["Tất cả", "Đồ chay", "Món mặn", "Đồ khô", "Nước giải khát", "Đồ ngọt"];
 
-  // Helper: get effective category (with user overrides)
   const getEffectiveCategory = (ingredient) => {
     return ingredientCategoryOverrides[ingredient.id] || ingredient.category;
   };
 
-  // Filter ingredients based on effective category
   const filteredIngredients = useMemo(() => {
     const list = activeTab === "Tất cả"
       ? [...allIngredients]
@@ -66,7 +58,6 @@ function App() {
     return list.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
   }, [activeTab, allIngredients, ingredientCategoryOverrides]);
 
-  // Filter dining recipes (using state, not data.json)
   const filteredDining = useMemo(() => {
     if (selectedDiningCategory === "Tất cả") return diningRecipes;
     return diningRecipes.filter(item => item.category === selectedDiningCategory);
@@ -87,7 +78,7 @@ function App() {
     }
   };
 
-  // Dining CRUD handlers
+  // Dining CRUD
   const updateDiningRecipe = (updatedRecipe) => {
     setDiningRecipes(prev => prev.map(r => r.id === updatedRecipe.id ? updatedRecipe : r));
     setToast({ show: true, message: `Đã cập nhật món "${updatedRecipe.name}"` });
@@ -143,7 +134,14 @@ function App() {
     setDiningForm({ name: '', restaurant: '', price: '', category: 'Món mặn', description: '', image: '' });
   };
 
-  // Click outside search
+  // Reset về trang chủ (Nấu ăn, Tất cả)
+  const resetToHome = () => {
+    setMode('cook');
+    setActiveTab('Tất cả');
+    setSelectedIngredients([]);
+    // Không reset overrides, dining, points, favorites – giữ dữ liệu người dùng
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -169,32 +167,16 @@ function App() {
     });
   }, [userRecipes, favorites, recipePoints]);
 
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 300);
-    return () => clearTimeout(timer);
-  }, [selectedIngredients, servingCount, preferenceFilter]);
-
   const suggestedRecipes = useMemo(() => {
     if (selectedIngredients.length === 0) return [];
-    let filtered = allRecipes.filter(r => 
-      r.required_ingredients && 
-      r.required_ingredients.some(id => selectedIngredients.includes(id)) &&
-      (r.servings >= servingCount)
-    );
-    if (preferenceFilter === 'favorites') {
-      filtered = filtered.filter(r => favorites.includes(r.id));
-    } else if (preferenceFilter === 'mostPoints') {
-      filtered = [...filtered].sort((a, b) => (recipePoints[b.id] || 0) - (recipePoints[a.id] || 0));
-    } else {
-      filtered = filtered.sort((a, b) => {
+    return allRecipes
+      .filter(r => r.required_ingredients && r.required_ingredients.some(id => selectedIngredients.includes(id)))
+      .sort((a, b) => {
         const matchA = a.required_ingredients.filter(id => selectedIngredients.includes(id)).length;
         const matchB = b.required_ingredients.filter(id => selectedIngredients.includes(id)).length;
         return matchB - matchA;
       });
-    }
-    return filtered;
-  }, [selectedIngredients, allRecipes, servingCount, preferenceFilter, favorites, recipePoints]);
+  }, [selectedIngredients, allRecipes]);
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
@@ -335,12 +317,13 @@ function App() {
 
       <header className="bg-white sticky top-0 z-[100] shadow-sm px-4 sm:px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 cursor-pointer" onClick={resetToHome}>
             <img src={logoChefbot} alt="Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl" />
             <h1 className="text-xl sm:text-2xl font-black text-gray-800 hidden md:block uppercase tracking-tighter">Chef<span className="text-orange-500">bot</span></h1>
           </div>
 
           <div className="flex-1 max-w-xl relative" ref={searchRef}>
+            {/* ... phần search giữ nguyên ... */}
             <div className="relative flex items-center">
               <div className="absolute left-4 text-gray-400 pointer-events-none">
                 <Search size={18} />
@@ -472,32 +455,6 @@ function App() {
 
         {mode === 'cook' ? (
           <>
-            <div className="flex flex-wrap gap-4 items-center justify-between mb-6 bg-white p-4 rounded-2xl shadow-sm">
-              <div className="flex items-center gap-3">
-                <span className="text-sm font-bold text-gray-600">Số người ăn:</span>
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={servingCount}
-                  onChange={(e) => setServingCount(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-20 px-3 py-2 border-2 border-gray-200 rounded-xl text-center font-bold"
-                />
-              </div>
-              <div className="flex items-center gap-3">
-                <Filter size={18} className="text-gray-400" />
-                <select
-                  value={preferenceFilter}
-                  onChange={(e) => setPreferenceFilter(e.target.value)}
-                  className="px-3 py-2 border-2 border-gray-200 rounded-xl text-sm font-bold bg-white"
-                >
-                  <option value="all">Tất cả món</option>
-                  <option value="favorites">Yêu thích</option>
-                  <option value="mostPoints">Nhiều điểm nhất</option>
-                </select>
-              </div>
-            </div>
-
             <div className="mb-8">
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
                 <button
@@ -666,7 +623,6 @@ function App() {
         onToggleFavorite={toggleFavorite} onCookSuccess={directViewRecipe?.price ? handleEatOut : handleCookLogic}
       />
 
-      {/* Dining Form Modal */}
       <AnimatePresence>
         {isDiningModalOpen && (
           <div className="fixed inset-0 z-[300] flex items-center justify-center p-4">
