@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import data from './data/data.json';
+import { DATA_VERSION } from './data/dataVersion'; // thêm dòng này
 import IngredientCard from './components/Pantry/IngredientCard';
 import RecipeCard from './components/Recipe/RecipeCard';
 import { Search, Heart, X, ShoppingCart, PackageOpen, Utensils, Star, Plus, BookOpen } from 'lucide-react';
@@ -35,8 +36,24 @@ function App() {
 
   // Drag & drop ingredient overrides
   const [ingredientCategoryOverrides, setIngredientCategoryOverrides] = useLocalStorage('chefbot-ingredient-categories', {});
-  // Dining recipes state
-  const [diningRecipes, setDiningRecipes] = useLocalStorage('chefbot-dining-recipes', data.diningRecipes || []);
+  
+  // Dining recipes state - sử dụng version key để reset khi data.json thay đổi
+  const [diningRecipes, setDiningRecipes] = useState(() => {
+    const stored = localStorage.getItem('chefbot-dining-recipes');
+    const storedVersion = localStorage.getItem('chefbot-data-version');
+    if (storedVersion === DATA_VERSION && stored) {
+      return JSON.parse(stored);
+    }
+    // Nếu version không khớp hoặc chưa có, reset về data mặc định
+    return data.diningRecipes || [];
+  });
+  
+  // Effect để lưu diningRecipes và version khi có thay đổi
+  useEffect(() => {
+    localStorage.setItem('chefbot-dining-recipes', JSON.stringify(diningRecipes));
+    localStorage.setItem('chefbot-data-version', DATA_VERSION);
+  }, [diningRecipes]);
+
   const [isDiningModalOpen, setIsDiningModalOpen] = useState(false);
   const [editingDining, setEditingDining] = useState(null);
   const [diningForm, setDiningForm] = useState({ name: '', restaurant: '', price: '', category: 'Món mặn', description: '', image: '' });
