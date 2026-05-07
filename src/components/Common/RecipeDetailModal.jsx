@@ -8,20 +8,39 @@ const RecipeDetailModal = ({ isOpen, onClose, recipe, selectedIngredients, allIn
   const getIngredientInfo = (id) => allIngredients.find(ing => ing.id === id);
   const isDining = !!recipe.price;
 
+  const handleClose = () => {
+    onClose();
+  };
+
+  const handleToggleFavorite = () => {
+    onToggleFavorite(recipe.id);
+  };
+
+  const handleCookSuccess = () => {
+    onCookSuccess(recipe);
+    onClose();
+  };
+
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[200] flex items-center justify-center p-0 sm:p-4">
+      <div className="fixed inset-0 z-[250] flex items-center justify-center p-0 sm:p-4">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} className="absolute inset-0 bg-black/70 backdrop-blur-lg" />
-        <motion.div initial={{ scale: 0.9, opacity: 0, y: 20 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 0.9, opacity: 0, y: 20 }} className="relative bg-white w-full max-w-3xl h-full sm:h-auto sm:max-h-[95vh] overflow-hidden sm:rounded-[48px] flex flex-col shadow-2xl border-2 border-gray-200">
+        <motion.div 
+          initial={{ scale: 0.9, opacity: 0, y: 20 }} 
+          animate={{ scale: 1, opacity: 1, y: 0 }} 
+          exit={{ scale: 0.9, opacity: 0, y: 20 }} 
+          onClick={(e) => e.stopPropagation()}
+          className="relative bg-white w-full max-w-3xl h-full sm:h-auto sm:max-h-[95vh] overflow-hidden sm:rounded-[48px] flex flex-col shadow-2xl border-2 border-gray-200"
+        >
           <div className="relative h-80 shrink-0">
             <img src={recipe.image} alt={recipe.name} className="w-full h-full object-cover" />
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
             
-            <button onClick={onClose} className="absolute top-6 right-6 p-4 bg-white/20 backdrop-blur-md text-white rounded-full hover:bg-white hover:text-black transition-all shadow-lg">
+            <button onClick={handleClose} className="absolute top-6 right-6 p-4 bg-white/20 backdrop-blur-md text-white rounded-full hover:bg-white hover:text-black transition-all shadow-lg">
               <X size={24}/>
             </button>
-            <button onClick={() => onToggleFavorite(recipe.id)} className={`absolute top-6 left-6 p-4 rounded-full backdrop-blur-md transition-all shadow-lg ${isFavorite ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white' : 'bg-white/20 text-white hover:bg-white hover:text-orange-500'}`}>
+            <button onClick={handleToggleFavorite} className={`absolute top-6 left-6 p-4 rounded-full backdrop-blur-md transition-all shadow-lg ${isFavorite ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white' : 'bg-white/20 text-white hover:bg-white hover:text-orange-500'}`}>
               <Heart size={24} fill={isFavorite ? "currentColor" : "none"} />
             </button>
             
@@ -107,7 +126,7 @@ const RecipeDetailModal = ({ isOpen, onClose, recipe, selectedIngredients, allIn
           
           <div className="p-8 bg-gradient-to-r from-gray-50 to-white border-t-2 border-gray-100">
             <button 
-              onClick={() => { onCookSuccess(recipe); onClose(); }}
+              onClick={handleCookSuccess}
               className="w-full py-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-3xl font-black uppercase tracking-widest text-lg shadow-xl flex items-center justify-center gap-4 transition-all active:scale-95 border-2 border-orange-400"
             >
               {isDining ? <Store size={24} /> : <Utensils size={24} />}

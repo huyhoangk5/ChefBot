@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Users, Clock, ArrowRight, Star, Heart, Edit, Trash2 } from 'lucide-react';
-import RecipeDetailModal from '../Common/RecipeDetailModal';
 import { motion } from 'framer-motion';
 
-const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints = {}, favorites = [], onToggleFavorite, onCookSuccess, showEditDelete = false, onEdit, onDelete }) => {
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
+const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints = {}, favorites = [], onToggleFavorite, onCookSuccess, showEditDelete = false, onEdit, onDelete, onViewDetail }) => {
   const points = recipePoints?.[recipe?.id] || 0;
   const isFavorite = favorites.includes(recipe.id);
 
@@ -79,20 +77,12 @@ const RecipeCard = ({ recipe, selectedIngredients, allIngredients, recipePoints 
         )}
 
         <button 
-          onClick={() => setIsDetailOpen(true)}
+          onClick={() => onViewDetail && onViewDetail(recipe)}
           className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl font-black text-sm uppercase transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-200"
         >
           Chi tiết <ArrowRight size={16} />
         </button>
       </div>
-
-      <RecipeDetailModal 
-        isOpen={isDetailOpen} onClose={() => setIsDetailOpen(false)}
-        recipe={recipe} selectedIngredients={selectedIngredients}
-        allIngredients={allIngredients} points={points} 
-        isFavorite={isFavorite} onToggleFavorite={onToggleFavorite}
-        onCookSuccess={onCookSuccess}
-      />
     </div>
   );
 };

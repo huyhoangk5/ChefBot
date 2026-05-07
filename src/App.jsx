@@ -17,6 +17,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('suggested');
   const [directViewRecipe, setDirectViewRecipe] = useState(null);
+  const [detailModalRecipe, setDetailModalRecipe] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchDropdown, setShowSearchDropdown] = useState(false);
   const [mode, setMode] = useState('cook');
@@ -582,6 +583,7 @@ function App() {
                   showEditDelete={true}
                   onEdit={() => openEditDiningModal(recipe)}
                   onDelete={() => deleteDiningRecipe(recipe.id, recipe.name)}
+                  onViewDetail={setDetailModalRecipe}
                 />
               ))}
             </div>
@@ -657,6 +659,7 @@ function App() {
         onEditRecipe={(recipe) => { setEditingRecipe(recipe); setIsCreateModalOpen(true); }}
         onDeleteRecipe={confirmDelete}
         onCreateNew={() => { setEditingRecipe(null); setIsCreateModalOpen(true); }}
+        onViewDetail={setDetailModalRecipe}
       />
 
       <CreateRecipeModal 
@@ -674,6 +677,14 @@ function App() {
         allIngredients={allIngredients} points={directViewRecipe ? (recipePoints[directViewRecipe.id] || 0) : 0} 
         isFavorite={directViewRecipe ? favorites.includes(directViewRecipe.id) : false}
         onToggleFavorite={toggleFavorite} onCookSuccess={directViewRecipe?.price ? handleEatOut : handleCookLogic}
+      />
+
+      <RecipeDetailModal 
+        isOpen={!!detailModalRecipe} onClose={() => setDetailModalRecipe(null)}
+        recipe={detailModalRecipe} selectedIngredients={selectedIngredients}
+        allIngredients={allIngredients} points={detailModalRecipe ? (recipePoints[detailModalRecipe.id] || 0) : 0} 
+        isFavorite={detailModalRecipe ? favorites.includes(detailModalRecipe.id) : false}
+        onToggleFavorite={toggleFavorite} onCookSuccess={detailModalRecipe?.price ? handleEatOut : handleCookLogic}
       />
 
       <AnimatePresence>

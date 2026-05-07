@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, Heart, BookOpen, Edit, Trash2, Plus } from 'lucide-react';
 import RecipeCard from '../Recipe/RecipeCard';
 
-const RecipeModal = ({ isOpen, onClose, recipes, modalMode, selectedIngredients, allIngredients, recipePoints, favorites, onToggleFavorite, onCookSuccess, onEditRecipe, onDeleteRecipe, onCreateNew }) => {
+const RecipeModal = ({ isOpen, onClose, recipes, modalMode, selectedIngredients, allIngredients, recipePoints, favorites, onToggleFavorite, onCookSuccess, onEditRecipe, onDeleteRecipe, onCreateNew, onViewDetail }) => {
   if (!isOpen) return null;
 
   const titles = {
@@ -59,6 +59,7 @@ const RecipeModal = ({ isOpen, onClose, recipes, modalMode, selectedIngredients,
                     showEditDelete={modalMode === 'user'}
                     onEdit={() => onEditRecipe(recipe)}
                     onDelete={() => onDeleteRecipe(recipe.id, recipe.name)}
+                    onViewDetail={onViewDetail}
                   />
                 ))}
               </div>
