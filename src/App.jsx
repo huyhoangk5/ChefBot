@@ -321,40 +321,46 @@ function App() {
   }, [modalMode, favorites, suggestedRecipes, sortedUserRecipes, allFavoriteRecipes]);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] pb-32">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 pb-32">
       <AnimatePresence>
         {toast.show && (
           <motion.div initial={{ y: -50, opacity: 0 }} animate={{ y: 20, opacity: 1 }} exit={{ y: -50, opacity: 0 }} className="fixed top-0 left-0 right-0 z-[200] flex justify-center px-4 pointer-events-none">
-            <div className="bg-gray-900 text-white px-6 py-3 rounded-2xl shadow-2xl font-bold text-sm pointer-events-auto">
+            <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-3xl shadow-2xl font-bold text-sm pointer-events-auto border border-orange-400">
               {toast.message}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <header className="bg-white sticky top-0 z-[100] shadow-sm px-4 sm:px-6 py-4">
+      <header className="bg-white/95 backdrop-blur-lg sticky top-0 z-[100] shadow-lg border-b border-orange-100 px-4 sm:px-6 py-5">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center gap-2 shrink-0 cursor-pointer" onClick={resetToHome}>
-            <img src={logoChefbot} alt="Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl" />
-            <h1 className="text-xl sm:text-2xl font-black text-gray-800 hidden md:block uppercase tracking-tighter">Chef<span className="text-orange-500">bot</span></h1>
+          <div className="flex items-center gap-3 shrink-0 cursor-pointer group" onClick={resetToHome}>
+            <div className="relative">
+              <img src={logoChefbot} alt="Logo" className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl shadow-lg border-2 border-orange-200 group-hover:border-orange-400 transition-all" />
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full animate-pulse"></div>
+            </div>
+            <div className="hidden md:block">
+              <h1 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent uppercase tracking-tighter">Chef<span className="text-orange-500">bot</span></h1>
+              <p className="text-xs text-gray-500 font-medium -mt-1">Food Delivery Assistant</p>
+            </div>
           </div>
 
           <div className="flex-1 max-w-xl relative" ref={searchRef}>
             {/* ... phần search giữ nguyên ... */}
             <div className="relative flex items-center">
-              <div className="absolute left-4 text-gray-400 pointer-events-none">
-                <Search size={18} />
+              <div className="absolute left-5 text-gray-400 pointer-events-none z-10">
+                <Search size={20} />
               </div>
               <input 
-                type="text" placeholder="Tìm món ăn..."
-                className="w-full pl-11 pr-14 py-3 bg-white rounded-2xl border-2 border-black focus:ring-4 focus:ring-orange-500/10 font-bold transition-all placeholder:text-gray-400"
+                type="text" placeholder="Tìm kiếm món ăn yêu thích..."
+                className="w-full pl-14 pr-16 py-4 bg-white rounded-3xl border-2 border-gray-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-100 font-semibold transition-all placeholder:text-gray-400 shadow-sm"
                 value={searchQuery}
                 onFocus={() => setShowSearchDropdown(true)}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button 
                 onClick={() => setShowSearchDropdown(true)}
-                className="absolute right-2 p-2 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors active:scale-90"
+                className="absolute right-2 p-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all active:scale-95 shadow-lg"
               >
                 <Search size={18} />
               </button>
@@ -362,8 +368,8 @@ function App() {
             
             <AnimatePresence>
               {showSearchDropdown && searchQuery.trim() !== "" && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border-2 border-black overflow-hidden z-[110]">
-                  <div className="max-h-[380px] overflow-y-auto custom-scrollbar">
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute top-full left-0 right-0 mt-3 bg-white rounded-3xl shadow-2xl border-2 border-gray-200 overflow-hidden z-[110]">
+                  <div className="max-h-[400px] overflow-y-auto custom-scrollbar">
                     {searchResults.length > 0 ? (
                       searchResults.map((result, idx) => (
                         <button key={idx} onClick={() => {
@@ -373,39 +379,42 @@ function App() {
                             setDirectViewRecipe(result.item);
                           }
                           setSearchQuery(""); setShowSearchDropdown(false);
-                        }} className="w-full flex items-center gap-4 p-4 hover:bg-orange-50 text-left border-b border-gray-100 last:border-none">
-                          <img src={result.item.image} className="w-11 h-11 rounded-xl object-cover" />
+                        }} className="w-full flex items-center gap-5 p-5 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 text-left border-b border-gray-100 last:border-none transition-all group">
+                          <img src={result.item.image} className="w-14 h-14 rounded-2xl object-cover shadow-md group-hover:scale-110 transition-transform" />
                           <div className="flex-1">
-                            <p className="font-bold text-gray-800 text-sm flex items-center gap-2">
+                            <p className="font-bold text-gray-800 text-base flex items-center gap-3 mb-1">
                               {result.item.name}
                               {result.type === 'recipe' && (recipePoints[result.item.id] > 0) && (
-                                <span className="flex items-center text-[10px] text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded-lg">
-                                  <Star size={10} fill="currentColor" className="mr-0.5" />
+                                <span className="flex items-center text-xs text-orange-600 bg-gradient-to-r from-orange-50 to-orange-100 px-2 py-1 rounded-lg border border-orange-200">
+                                  <Star size={12} fill="currentColor" className="mr-1" />
                                   {recipePoints[result.item.id]}
                                 </span>
                               )}
                             </p>
-                            <div className="flex items-center gap-2">
-                              <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest">
-                                {result.item.id?.toString().startsWith('user-') ? 'Món của tôi' : 
-                                 (result.subtype === 'dine' ? 'Món ăn ngoài' : 
-                                 (result.type === 'recipe' ? 'Món nấu tại nhà' : 'Nguyên liệu'))}
+                            <div className="flex items-center gap-3">
+                              <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
+                                {result.item.id?.toString().startsWith('user-') ? '🏠 Món của tôi' : 
+                                 (result.subtype === 'dine' ? '🍽️ Món ăn ngoài' : 
+                                 (result.type === 'recipe' ? '🍳 Món nấu tại nhà' : '🥬 Nguyên liệu'))}
                               </p>
                               {result.type === 'recipe' && favorites.includes(result.item.id) && (
-                                <Heart size={10} fill="#f97316" className="text-orange-500" />
+                                <Heart size={12} fill="#f97316" className="text-orange-500" />
                               )}
                             </div>
                           </div>
                         </button>
                       ))
                     ) : (
-                      <div className="p-6 text-center">
-                        <p className="text-gray-400 text-sm mb-4">Chefbot chưa có món "{searchQuery}"</p>
+                      <div className="p-8 text-center">
+                        <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Search size={24} className="text-orange-500" />
+                        </div>
+                        <p className="text-gray-600 text-sm mb-6 font-medium">Chefbot chưa có món "{searchQuery}"</p>
                         <button 
                           onClick={() => { setIsCreateModalOpen(true); setShowSearchDropdown(false); }}
-                          className="w-full py-3 bg-orange-100 text-orange-600 rounded-xl font-black uppercase text-[10px] flex items-center justify-center gap-2"
+                          className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-black uppercase text-sm flex items-center justify-center gap-3 transition-all shadow-lg"
                         >
-                          <Plus size={14} /> Tự tạo công thức ngay
+                          <Plus size={18} /> Tự tạo công thức ngay
                         </button>
                       </div>
                     )}
@@ -415,29 +424,29 @@ function App() {
             </AnimatePresence>
           </div>
 
-          <div className="flex items-center gap-1 sm:gap-4 shrink-0">
-            <button onClick={() => { setModalMode('user'); setIsModalOpen(true); }} className="relative p-2 sm:p-3 hover:bg-orange-50 rounded-2xl transition-all">
-              <BookOpen size={24} className={userRecipes.length > 0 ? "text-gray-800" : "text-gray-300"} />
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <button onClick={() => { setModalMode('user'); setIsModalOpen(true); }} className="relative p-3 sm:p-4 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 rounded-2xl transition-all group">
+              <BookOpen size={24} className={userRecipes.length > 0 ? "text-blue-600 group-hover:text-blue-700" : "text-gray-400"} />
               {userRecipes.length > 0 && (
-                <span className="absolute top-0 right-0 bg-black text-white text-[10px] font-black min-w-[18px] h-4.5 flex items-center justify-center rounded-full border-2 border-white px-1">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-[10px] font-black min-w-[20px] h-5 flex items-center justify-center rounded-full border-2 border-white px-1 shadow-lg">
                   {userRecipes.length}
                 </span>
               )}
             </button>
 
-            <button onClick={() => { setModalMode('favorites'); setIsModalOpen(true); }} className="relative p-2 sm:p-3 hover:bg-orange-50 rounded-2xl transition-all">
-              <Heart size={24} className={favorites.length > 0 ? "text-orange-500" : "text-gray-300"} fill={favorites.length > 0 ? "currentColor" : "none"} />
+            <button onClick={() => { setModalMode('favorites'); setIsModalOpen(true); }} className="relative p-3 sm:p-4 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 rounded-2xl transition-all group">
+              <Heart size={24} className={favorites.length > 0 ? "text-orange-500 group-hover:text-orange-600" : "text-gray-400"} fill={favorites.length > 0 ? "currentColor" : "none"} />
               {favorites.length > 0 && (
-                <span className="absolute top-0 right-0 bg-black text-white text-[10px] font-black min-w-[18px] h-4.5 flex items-center justify-center rounded-full border-2 border-white px-1">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-[10px] font-black min-w-[20px] h-5 flex items-center justify-center rounded-full border-2 border-white px-1 shadow-lg">
                   {favorites.length}
                 </span>
               )}
             </button>
 
-            <button onClick={() => setIsShoppingOpen(true)} className="relative p-2 sm:p-3 hover:bg-orange-50 rounded-2xl transition-all">
-              <ShoppingCart size={24} className="text-gray-700" />
+            <button onClick={() => setIsShoppingOpen(true)} className="relative p-3 sm:p-4 hover:bg-gradient-to-r hover:from-green-50 hover:to-green-100 rounded-2xl transition-all group">
+              <ShoppingCart size={24} className="text-gray-600 group-hover:text-green-600" />
               {shoppingList.length > 0 && (
-                <span className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-black min-w-[18px] h-4.5 flex items-center justify-center rounded-full border-2 border-white px-1">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-[10px] font-black min-w-[20px] h-5 flex items-center justify-center rounded-full border-2 border-white px-1 shadow-lg">
                   {shoppingList.length}
                 </span>
               )}
@@ -446,40 +455,50 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 mt-8">
-        <div className="flex gap-4 mb-6 border-b border-gray-200 pb-2">
+      <main className="max-w-6xl mx-auto px-4 mt-10">
+        <div className="flex gap-6 mb-8 border-b-2 border-gray-100 pb-4">
           <button
             onClick={() => setMode('cook')}
-            className={`text-lg font-black uppercase tracking-wide pb-2 transition-all ${
+            className={`relative text-lg font-black uppercase tracking-wide pb-3 px-4 transition-all ${
               mode === 'cook'
                 ? 'text-orange-500 border-b-4 border-orange-500'
-                : 'text-gray-400 hover:text-gray-600'
+                : 'text-gray-500 hover:text-blue-600'
             }`}
           >
-            🍳 Nấu ăn tại nhà
+            <span className="flex items-center gap-2">
+              🍳 <span>Nấu ăn tại nhà</span>
+            </span>
+            {mode === 'cook' && (
+              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"></div>
+            )}
           </button>
           <button
             onClick={() => setMode('dine')}
-            className={`text-lg font-black uppercase tracking-wide pb-2 transition-all ${
+            className={`relative text-lg font-black uppercase tracking-wide pb-3 px-4 transition-all ${
               mode === 'dine'
                 ? 'text-orange-500 border-b-4 border-orange-500'
-                : 'text-gray-400 hover:text-gray-600'
+                : 'text-gray-500 hover:text-blue-600'
             }`}
           >
-            🍽️ Đi ăn ngoài
+            <span className="flex items-center gap-2">
+              🍽️ <span>Đi ăn ngoài</span>
+            </span>
+            {mode === 'dine' && (
+              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"></div>
+            )}
           </button>
         </div>
 
         {mode === 'cook' ? (
           <>
-            <div className="mb-8">
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
+            <div className="mb-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 <button
                   onClick={() => setActiveTab("Tất cả")}
-                  className={`px-4 py-2.5 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center ${
+                  className={`px-5 py-3 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center shadow-sm ${
                     activeTab === "Tất cả"
-                      ? 'bg-orange-500 text-white border-orange-600 shadow-md'
-                      : 'bg-white text-gray-400 border-gray-200'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-orange-600 shadow-lg shadow-orange-200'
+                      : 'bg-white text-gray-600 border-gray-200 hover:border-orange-300 hover:bg-orange-50'
                   }`}
                 >
                   Tất cả
@@ -490,10 +509,10 @@ function App() {
                     onClick={() => setActiveTab(cat)}
                     onDragOver={handleDragOver}
                     onDrop={(e) => handleDropOnCategory(cat, e)}
-                    className={`px-4 py-2.5 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center ${
+                    className={`px-5 py-3 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center shadow-sm ${
                       activeTab === cat
-                        ? 'bg-orange-500 text-white border-orange-600 shadow-md'
-                        : 'bg-white text-gray-400 border-gray-200'
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-orange-600 shadow-lg shadow-orange-200'
+                        : 'bg-white text-gray-600 border-gray-200 hover:border-orange-300 hover:bg-orange-50'
                     }`}
                   >
                     {cat}
@@ -504,7 +523,7 @@ function App() {
                     const newCat = prompt("Nhập tên loại nguyên liệu mới:");
                     if (newCat && !allCategories.includes(newCat)) addCustomCategory(newCat);
                   }}
-                  className="px-4 py-2.5 rounded-2xl font-bold text-sm border-2 border-dashed border-orange-300 bg-orange-50 text-orange-600 flex items-center justify-center gap-1 hover:bg-orange-100 transition-all"
+                  className="px-5 py-3 rounded-2xl font-bold text-sm border-2 border-dashed border-blue-300 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 flex items-center justify-center gap-2 hover:from-blue-100 hover:to-blue-200 transition-all shadow-sm"
                 >
                   <Plus size={16} /> <span className="hidden sm:inline">Thêm loại</span>
                 </button>
@@ -526,16 +545,16 @@ function App() {
           </>
         ) : (
           <>
-            <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
+            <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 {diningCategories.map(cat => (
                   <button
                     key={cat}
                     onClick={() => setSelectedDiningCategory(cat)}
-                    className={`px-4 py-2.5 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center ${
+                    className={`px-5 py-3 rounded-2xl font-bold text-sm whitespace-nowrap border-2 transition-all text-center shadow-sm ${
                       selectedDiningCategory === cat
-                        ? 'bg-orange-500 text-white border-orange-600 shadow-md'
-                        : 'bg-white text-gray-400 border-gray-200'
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-orange-600 shadow-lg shadow-orange-200'
+                        : 'bg-white text-gray-600 border-gray-200 hover:border-orange-300 hover:bg-orange-50'
                     }`}
                   >
                     {cat}
@@ -544,9 +563,9 @@ function App() {
               </div>
               <button
                 onClick={() => { setEditingDining(null); setIsDiningModalOpen(true); }}
-                className="px-4 py-2 bg-orange-500 text-white rounded-xl font-bold text-sm flex items-center gap-2 shadow-md hover:bg-orange-600"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-2xl font-bold text-sm flex items-center gap-2 shadow-lg shadow-blue-200 transition-all"
               >
-                <Plus size={16} /> Thêm món
+                <Plus size={18} /> Thêm món
               </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -572,32 +591,49 @@ function App() {
 
       <button 
         onClick={() => { setEditingRecipe(null); setIsCreateModalOpen(true); }}
-        className="sm:hidden fixed bottom-28 right-6 w-14 h-14 bg-black text-white rounded-full shadow-2xl z-40 flex items-center justify-center active:scale-90 transition-transform"
+        className="sm:hidden fixed bottom-32 right-6 w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl z-40 flex items-center justify-center active:scale-90 transition-all border-4 border-white"
       >
-        <Plus size={28} />
+        <Plus size={32} />
       </button>
 
       <AnimatePresence>
         {isShoppingOpen && (
           <div className="fixed inset-0 z-[200]">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsShoppingOpen(false)} className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-            <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white p-6 sm:p-8 flex flex-col shadow-2xl">
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-black uppercase tracking-tighter italic">Giỏ <span className="text-orange-500">đi chợ</span></h2>
-                <button onClick={() => setIsShoppingOpen(false)} className="p-2 bg-gray-100 rounded-full hover:bg-red-50 hover:text-red-500 transition-colors"><X size={20}/></button>
+            <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-gradient-to-br from-white to-gray-50 p-8 flex flex-col shadow-2xl border-l-2 border-gray-200">
+              <div className="flex items-center justify-between mb-10">
+                <div>
+                  <h2 className="text-3xl font-black uppercase tracking-tighter bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">Giỏ đi chợ</h2>
+                  <p className="text-sm text-gray-500 font-medium mt-1">Danh sách mua sắm của bạn</p>
+                </div>
+                <button onClick={() => setIsShoppingOpen(false)} className="p-3 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl hover:from-red-100 hover:to-red-200 hover:text-red-600 transition-all shadow-lg">
+                  <X size={24}/>
+                </button>
               </div>
-              <div className="flex-1 overflow-y-auto space-y-3 custom-scrollbar pr-2">
+              <div className="flex-1 overflow-y-auto space-y-4 custom-scrollbar pr-2">
                 {shoppingList.map(item => (
-                  <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                    <img src={item.image} className="w-12 h-12 rounded-xl object-cover" />
-                    <span className="flex-1 font-bold text-gray-700">{item.name}</span>
-                    <button onClick={() => setShoppingList(prev => prev.filter(i => i.id !== item.id))} className="text-gray-300 hover:text-red-500 transition-colors"><X size={18}/></button>
+                  <div key={item.id} className="flex items-center gap-5 p-5 bg-white rounded-3xl border-2 border-gray-100 shadow-sm hover:shadow-md transition-all group">
+                    <img src={item.image} className="w-16 h-16 rounded-2xl object-cover shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="flex-1 font-bold text-gray-800 text-lg">{item.name}</span>
+                    <button onClick={() => setShoppingList(prev => prev.filter(i => i.id !== item.id))} className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all">
+                      <X size={20}/>
+                    </button>
                   </div>
                 ))}
-                {shoppingList.length === 0 && <p className="text-center text-gray-400 mt-20 font-bold italic">Bạn chưa thêm nguyên liệu nào...</p>}
+                {shoppingList.length === 0 && (
+                  <div className="text-center mt-32">
+                    <div className="w-24 h-24 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <ShoppingCart size={32} className="text-gray-400" />
+                    </div>
+                    <p className="text-gray-500 font-bold text-lg mb-2">Giỏ hàng trống</p>
+                    <p className="text-gray-400 text-sm">Bạn chưa thêm nguyên liệu nào...</p>
+                  </div>
+                )}
               </div>
               {shoppingList.length > 0 && (
-                <button onClick={() => setShoppingList([])} className="mt-8 w-full py-4 bg-black text-white rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-gray-800 transition-all active:scale-[0.98]">Xóa tất cả</button>
+                <button onClick={() => setShoppingList([])} className="mt-8 w-full py-5 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-3xl font-black uppercase text-sm tracking-widest transition-all active:scale-95 shadow-lg border-2 border-red-400">
+                  🗑️ Xóa tất cả
+                </button>
               )}
             </motion.div>
           </div>
@@ -606,8 +642,8 @@ function App() {
 
       <div className="fixed bottom-0 left-0 right-0 p-6 z-40 flex justify-center pointer-events-none">
         {mode === 'cook' && (
-          <button onClick={() => { setModalMode('suggested'); setIsModalOpen(true); }} className="px-12 py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl transition-all pointer-events-auto bg-orange-500 text-white shadow-orange-200 active:scale-95">
-            {selectedIngredients.length === 0 ? "Chọn nguyên liệu để nấu" : `Gợi ý món ăn (${suggestedRecipes.length})`}
+          <button onClick={() => { setModalMode('suggested'); setIsModalOpen(true); }} className="px-8 py-4 rounded-3xl font-black text-sm uppercase tracking-widest shadow-2xl transition-all pointer-events-auto bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-orange-300 active:scale-95 border-2 border-white">
+            {selectedIngredients.length === 0 ? "🔍 Chọn nguyên liệu để nấu" : `🍳 Gợi ý món ăn (${suggestedRecipes.length})`}
           </button>
         )}
       </div>
